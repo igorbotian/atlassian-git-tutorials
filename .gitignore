@@ -1,3 +1,5 @@
 .idea/
+*.epub
 *.iml
+*.html
 *.~*
