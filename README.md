@@ -1,4 +1,4 @@
-# Atlassian (c) Git tutorials
+# Git tutorials by Atlassian
 
 Contents of [Git tutorials](https://www.atlassian.com/git/tutorials) by Atlassian in Markdown format.
 
