@@ -59,8 +59,8 @@ For example, you might want to configure Git to deploy the most recent commit fr
 ### Git for marketing
 
 To understand how switching to Git affects your company’s marketing activities, imagine your development team has three distinct changes scheduled for completion in the next few weeks:  
-- The entire team is finishing up a game-changing feature that they’ve been working on for the last 6 months.
-- Mary is implementing a smaller, unrelated feature that only impacts existing customers.
+- The entire team is finishing up a game-changing feature that they’ve been working on for the last 6 months.  
+- Mary is implementing a smaller, unrelated feature that only impacts existing customers.  
 - Rick is making some much-needed updates to the user interface.
 
 If you’re using a traditional development workflow that relies on a centralized VCS, all of these changes would probably be rolled up into a single release. Marketing can only make one announcement that focuses primarily on the game-changing feature, and the marketing potential of the other two updates is effectively ignored.
