@@ -1,4 +1,4 @@
-# Why Git for your organization
+## Why Git for your organization
 
 Switching from a centralized version control system to Git changes the way your development team creates software. And, if you’re a company that relies on its software for mission-critical applications, altering your development workflow impacts your entire business.
 
@@ -6,9 +6,9 @@ Switching from a centralized version control system to Git changes the way your 
 
 In this article, we’ll discuss how Git benefits each aspect of your organization, from your development team to your marketing team, and everything in between. By the end of this article, it should be clear that Git isn’t just for [agile software development](https://www.atlassian.com/agile/developer)—it’s for agile business.
 
-## Git for developers
+### Git for developers
 
-### Feature Branch Workflow
+#### Feature Branch Workflow
 
 One of the biggest advantages of Git is its branching capabilities. Unlike centralized version control systems, Git branches are cheap and easy to merge. This facilitates the feature branch workflow popular with many Git users.
 
@@ -18,7 +18,7 @@ Feature branches provide an isolated environment for every change to your codeba
 
 Using feature branches is not only more reliable than directly editing production code, but it also provides organizational benefits. They let you represent development work at the same granularity as the your [agile backlog](https://www.atlassian.com/agile/backlogs). For example, you might implement a policy where each [Jira](https://www.atlassian.com/software/jira) ticket is addressed in its own feature branch.
 
-### Distributed Development
+#### Distributed Development
 
 In SVN, each developer gets a working copy that points back to a single central repository. Git, however, is a distributed version control system. Instead of a working copy, each developer gets their own local repository, complete with a full history of commits.
 
@@ -30,7 +30,7 @@ Distributed development also makes it easier to scale your engineering team. If 
 
 And, similar to feature branches, distributed development creates a more reliable environment. Even if a developer obliterates their own repository, they can simply clone someone else’s and start anew.
 
-### Pull Requests
+#### Pull Requests
 
 Many source code management tools such as [Bitbucket](https://bitbucket.org/) enhance core Git functionality with pull requests. A pull request is a way to ask another developer to merge one of your branches into their repository. This not only makes it easier for project leads to keep track of changes, but also lets developers initiate discussions around their work before integrating it with the rest of the codebase.
 
@@ -38,7 +38,7 @@ Many source code management tools such as [Bitbucket](https://bitbucket.org/) en
 
 Since they’re essentially a comment thread attached to a feature branch, pull requests are extremely versatile. When a developer gets stuck with a hard problem, they can open a pull request to ask for help from the rest of the team. Alternatively, junior developers can be confident that they aren’t destroying the entire project by treating pull requests as a formal code review.
 
-### Community
+#### Community
 
 In many circles, Git has come to be the expected version control system for new projects. If your team is using Git, odds are you won’t have to train new hires on your workflow, because they’ll already be familiar with distributed development.
 
@@ -46,7 +46,7 @@ In many circles, Git has come to be the expected version control system for new 
 
 In addition, Git is very popular among open source projects. This means it’s easy to leverage 3rd-party libraries and encourage others to fork your own open source code.
 
-### Faster Release Cycle
+#### Faster Release Cycle
 
 The ultimate result of feature branches, distributed development, pull requests, and a stable community is a faster release cycle. These capabilities facilitate an [agile workflow](https://www.atlassian.com/agile/workflow) where developers are encouraged to share smaller changes more frequently. In turn, changes can get pushed down the deployment pipeline faster than the monolithic releases common with centralized version control systems.
 

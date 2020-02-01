@@ -1,6 +1,6 @@
-# Install Git
+## Install Git
 
-## Install Git on Mac OS X
+### Install Git on Mac OS X
 
 There are several ways to install Git on a Mac. In fact, if you've installed XCode (or it's Command Line Tools), Git may already be installed. To find out, open a terminal and enter `git --version`.  
 `$ git --version`    
@@ -8,7 +8,7 @@ There are several ways to install Git on a Mac. In fact, if you've installed XCo
 
 Apple actually maintain and ship [their own fork of Git](http://opensource.apple.com/source/Git/), but it tends to lag behind mainstream Git by several major versions. You may want to install a newer version of Git using one of the methods below:
 
-### Git for Mac Installer
+#### Git for Mac Installer
 
 The easiest way to install Git on a Mac is via the stand-alone installer:
 
@@ -26,7 +26,7 @@ The easiest way to install Git on a Mac is via the stand-alone installer:
 
 5. (Optional) To make Git remember your username and password when working with HTTPS repositories, [configure the git-credential-osxkeychain helper](https://www.atlassian.com/git/tutorials/install-git#install-the-git-credential-osx).
 
-### Install Git with Homebrew
+#### Install Git with Homebrew
 
 If you have [installed Homebrew](http://brew.sh/) to manage packages on OS X, you can follow these instructions to install Git:
 
@@ -43,7 +43,7 @@ If you have [installed Homebrew](http://brew.sh/) to manage packages on OS X, yo
 
 5. (Optional) To make Git remember your username and password when working with HTTPS repositories, install the [git-credential-osxkeychain helper](https://www.atlassian.com/git/tutorials/install-git#install-the-git-credential-osx).
 
-### Install Git with MacPorts
+#### Install Git with MacPorts
 
 If you have [installed MacPorts](https://www.macports.org/install.php) to manage packages on OS X, you can follow these instructions to install Git:
 
@@ -63,7 +63,7 @@ If you have [installed MacPorts](https://www.macports.org/install.php) to manage
 
 5. (Optional) To make Git remember your username and password when working with HTTPS repositories, configure the [git-credential-osxkeychain helper](https://www.atlassian.com/git/tutorials/install-git#install-the-git-credential-osx).
 
-### Install the git-credential-osxkeychain helper
+#### Install the git-credential-osxkeychain helper
 
 Bitbucket supports pushing and pulling your Git repositories over both SSH and HTTPS. To work with a private repository over HTTPS, you must supply a username and password each time you push or pull. The **git-credential-osxkeychain** helper allows you to cache your username and password in the OSX keychain, so you don't have to retype it each time.
 
@@ -83,13 +83,13 @@ If you receive a usage statement, skip to step 4. If the helper is not installed
 `$ git config --global credential.helper osxkeychain`  
 The next time Git prompts you for a username and password, it will cache them in your keychain for future use.
 
-### Install Git with Atlassian Sourcetree
+#### Install Git with Atlassian Sourcetree
 
 Sourcetree, a free visual Git client for Mac, comes with its own bundled version of Git. You can [download Sourcetree here](https://www.sourcetreeapp.com/).
 
 To learn how to use Git with Sourcetree (and how to host your Git repositories on Bitbucket) you can follow our comprehensive [Git tutorial with Bitbucket and Sourcetree](https://confluence.atlassian.com/bitbucket/tutorial-learn-bitbucket-with-sourcetree-760120235.html).
 
-### Build Git from source on OS X
+#### Build Git from source on OS X
 
 Building Git can be a little tricky on Mac due to certain libraries moving around between OS X releases. On El Capitan (OS X 10.11), follow these instructions to build Git:
 
@@ -107,9 +107,9 @@ Building Git can be a little tricky on Mac due to certain libraries moving aroun
 5. To build Git run make with the following flags:  
 `$ NO_GETTEXT=1 make CFLAGS="-I/usr/local/opt/openssl/include" LDFLAGS="-L/usr/local/opt/openssl/lib"`
 
-## Install Git on Windows
+### Install Git on Windows
 
-### Git for Windows stand-alone installer
+#### Git for Windows stand-alone installer
 
 1. Download the latest [Git for Windows installer](https://git-for-windows.github.io/).
 
@@ -124,13 +124,13 @@ Building Git can be a little tricky on Mac due to certain libraries moving aroun
 5. _Optional: Install the Git credential helper on Windows_  
 Bitbucket supports pushing and pulling over HTTP to your remote Git repositories on Bitbucket. Every time you interact with the remote repository, you must supply a username/password combination. You can store these credentials, instead of supplying the combination every time, with the [Git Credential Manager for Windows](https://github.com/Microsoft/Git-Credential-Manager-for-Windows).
 
-### Install Git with Atlassian Sourcetree
+#### Install Git with Atlassian Sourcetree
 
 Sourcetree, a free visual Git client for Windows, comes with its own bundled version of Git. You can [download Sourcetree here](https://www.sourcetreeapp.com/).
 
 To learn how to use Git with Sourcetree (and how to host your Git repositories on Bitbucket) you can follow our comprehensive [Git tutorial with Bitbucket and Sourcetree](https://confluence.atlassian.com/bitbucket/tutorial-learn-bitbucket-with-sourcetree-760120235.html).
 
-## Install Git on Linux
+### Install Git on Linux
 
 **Debian / Ubuntu (apt-get)**  
 Git packages are available via [apt](https://wiki.debian.org/Apt):
@@ -163,7 +163,7 @@ or
 `$ git config --global user.name "Emma Paris"`  
 `$ git config --global user.email "eparis@atlassian.com"`  
 
-### Build Git from source on Linux
+#### Build Git from source on Linux
 
 **Debian / Ubuntu**  
 
