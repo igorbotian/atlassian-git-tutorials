@@ -8,7 +8,7 @@ This tutorial provides all of the necessary skills to work with previous revisio
 
 #### Finding what is lost: reviewing old commits
 
-The whole idea behind any version control system is to store “safe” copies of a project so that you never have to worry about irreparably breaking your code base. Once you’ve built up a project history of commits, you can review and revisit any commit in the history. One of the best utilities for reviewing the history of a Git repository is the git log command. In the example below, we use [git log](https://www.atlassian.com/git/tutorials/git-log) to get a list of the latest commits to a popular open-source graphics library.
+The whole idea behind any version control system is to store “safe” copies of a project so that you never have to worry about irreparably breaking your code base. Once you’ve built up a project history of commits, you can review and revisit any commit in the history. One of the best utilities for reviewing the history of a Git repository is the git log command. In the example below, we use [git log](#git-log) to get a list of the latest commits to a popular open-source graphics library.
 
 ```
 git log --oneline
@@ -32,13 +32,13 @@ b5c1b5c70 Merge pull request #12799 from dhritzkiv/patch-21
 881b25b58 Update ProjectionMatrix on change aspect
 ```
 
-Each commit has a unique SHA-1 identifying hash. These IDs are used to travel through the committed timeline and revisit commits. By default, `git log` will only show commits for the currently selected branch. It is entirely possible that the commit you're looking for is on another branch. You can view all commits across all branches by executing `git log --branches=*`. The command [git branch](https://www.atlassian.com/git/tutorials/using-branches) is used to view and visit other branches. Invoking the command, `git branch -a` will return a list of all known branch names. One of these branch names can then be logged using `git log <branch_name>`.
+Each commit has a unique SHA-1 identifying hash. These IDs are used to travel through the committed timeline and revisit commits. By default, `git log` will only show commits for the currently selected branch. It is entirely possible that the commit you're looking for is on another branch. You can view all commits across all branches by executing `git log --branches=*`. The command [git branch](#using-branches) is used to view and visit other branches. Invoking the command, `git branch -a` will return a list of all known branch names. One of these branch names can then be logged using `git log <branch_name>`.
 
 When you have found a commit reference to the point in history you want to visit, you can utilize the `git checkout` command to visit that commit. `git checkout` is an easy way to “load” any of these saved snapshots onto your development machine. During the normal course of development, the `HEAD` usually points to master or some other local branch, but when you check out a previous commit, HEAD no longer points to a branch—it points directly to a commit. This is called a “detached HEAD” state, and it can be visualized as the following:
 
 ![](undoing-changes-01.png)
 
-Checking out an old file does not move the `HEAD` pointer. It remains on the same branch and same commit, avoiding a 'detached head' state. You can then commit the old version of the file in a new snapshot as you would any other changes. So, in effect, this usage of `git checkout` on a file, serves as a way to revert back to an old version of an individual file. For more information on these two modes visit the [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) page
+Checking out an old file does not move the `HEAD` pointer. It remains on the same branch and same commit, avoiding a 'detached head' state. You can then commit the old version of the file in a new snapshot as you would any other changes. So, in effect, this usage of `git checkout` on a file, serves as a way to revert back to an old version of an individual file. For more information on these two modes visit the [git checkout](#git-checkout) page
 
 #### Viewing an old revision
 
@@ -70,7 +70,7 @@ This makes your working directory match the exact state of the a1e8fb5 commit. Y
 git checkout master
 ```
 
-This assumes that you're developing on the default `master` branch. Once you’re back in the master branch, you can use either [git revert](https://www.atlassian.com/git/tutorials/undoing-changes/git-revert) or [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) to undo any undesired changes.
+This assumes that you're developing on the default `master` branch. Once you’re back in the master branch, you can use either [git revert](#git-revert) or [git reset](#git-reset) to undo any undesired changes.
 
 #### Undoing a committed snapshot
 
@@ -90,7 +90,7 @@ We will focus on undoing the `872fa7e Try something crazy` commit. Maybe things 
 
 Using the git checkout command we can checkout the previous commit, `a1e8fb5`, putting the repository in a state before the crazy commit happened. Checking out a specific commit will put the repo in a "detached HEAD" state. This means you are no longer working on any branch. In a detached state, any new commits you make will be orphaned when you change branches back to an established branch. Orphaned commits are up for deletion by Git's garbage collector. The garbage collector runs on a configured interval and permanently destroys orphaned commits. To prevent orphaned commits from being garbage collected, we need to ensure we are on a branch.
 
-From the detached HEAD state, we can execute `git checkout -b new_branch_without_crazy_commit`. This will create a new branch named `new_branch_without_crazy_commit` and switch to that state. The repo is now on a new history timeline in which the `872fa7e` commit no longer exists. At this point, we can continue work on this new branch in which the `872fa7e` commit no longer exists and consider it 'undone'. Unfortunately, if you need the previous branch, maybe it was your `master` branch, this undo strategy is not appropriate. Let's look at some other 'undo' strategies. For more information and examples review our in-depth [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) discussion.
+From the detached HEAD state, we can execute `git checkout -b new_branch_without_crazy_commit`. This will create a new branch named `new_branch_without_crazy_commit` and switch to that state. The repo is now on a new history timeline in which the `872fa7e` commit no longer exists. At this point, we can continue work on this new branch in which the `872fa7e` commit no longer exists and consider it 'undone'. Unfortunately, if you need the previous branch, maybe it was your `master` branch, this undo strategy is not appropriate. Let's look at some other 'undo' strategies. For more information and examples review our in-depth [git checkout](#git-checkout) discussion.
 
 #### How to undo a public commit with git revert
 
@@ -109,7 +109,7 @@ At this point, we have again technically 'undone' the `872fa7e` commit. Although
 
 #### How to undo a commit with git reset
 
-For this undo strategy we will continue with our working example. [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) is an extensive command with multiple uses and functions. If we invoke `git reset --hard` a1e8fb5 the commit history is reset to that specified commit. Examining the commit history with git log will now look like:
+For this undo strategy we will continue with our working example. [git reset](#git-reset) is an extensive command with multiple uses and functions. If we invoke `git reset --hard` a1e8fb5 the commit history is reset to that specified commit. Examining the commit history with git log will now look like:
 
 ```
 git log --oneline
@@ -122,11 +122,11 @@ The log output shows the `e2f9a78` and `872fa7e` commits no longer exist in the 
 
 #### Undoing the last commit
 
-In the previous section, we discussed different strategies for undoing commits. These strategies are all applicable to the most recent commit as well. In some cases though, you might not need to remove or reset the last commit. Maybe it was just made prematurely. In this case you can amend the most recent commit. Once you have made more changes in the working directory and staged them for commit by using [git add](https://www.atlassian.com/git/tutorials/saving-changes), you can execute `git commit --amend`. This will have Git open the configured system editor and let you modify the last commit message. The new changes will be added to the amended commit.
+In the previous section, we discussed different strategies for undoing commits. These strategies are all applicable to the most recent commit as well. In some cases though, you might not need to remove or reset the last commit. Maybe it was just made prematurely. In this case you can amend the most recent commit. Once you have made more changes in the working directory and staged them for commit by using [git add](#saving-changes), you can execute `git commit --amend`. This will have Git open the configured system editor and let you modify the last commit message. The new changes will be added to the amended commit.
 
 #### Undoing uncommitted changes
 
-Before changes are committed to the repository history, they live in the staging index and the working directory. You may need to undo changes within these two areas. The staging index and working directory are internal Git state management mechanisms. For more detailed information on how these two mechanisms operate, visit the [git reset](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting) page which explores them in depth.
+Before changes are committed to the repository history, they live in the staging index and the working directory. You may need to undo changes within these two areas. The staging index and working directory are internal Git state management mechanisms. For more detailed information on how these two mechanisms operate, visit the [git reset](#resetting-checking-out-and-reverting) page which explores them in depth.
 
 #### The working directory
 
@@ -134,7 +134,7 @@ The working directory is generally in sync with the local file system. To undo c
 
 #### The staging index
 
-The [git add](https://www.atlassian.com/git/tutorials/saving-changes) command is used to add changes to the staging index. Git reset is primarily used to undo the staging index changes. A `--mixed` reset will move any pending changes from the staging index back into the working directory.
+The [git add](#saving-changes) command is used to add changes to the staging index. Git reset is primarily used to undo the staging index changes. A `--mixed` reset will move any pending changes from the staging index back into the working directory.
 
 #### Undoing public changes
 
@@ -143,16 +143,16 @@ When working on a team with remote repositories, extra consideration needs to be
 The preferred method of undoing shared history is `git revert`. A revert is safer than a reset because it will not remove any commits from a shared history. A revert will retain the commits you want to undo and create a new commit that inverts the undesired commit. This method is safer for shared remote collaboration because a remote developer can then pull the branch and receive the new revert commit which undoes the undesired commit.
 
 #### Summary
-We covered many high-level strategies for undoing things in Git. It's important to remember that there is more than one way to 'undo' in a Git project. Most of the discussion on this page touched on deeper topics that are more thoroughly explained on pages specific to the relevant Git commands. The most commonly used 'undo' tools are [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout), [git revert](https://www.atlassian.com/git/tutorials/undoing-changes/git-revert), and [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset). Some key points to remember are:  
+We covered many high-level strategies for undoing things in Git. It's important to remember that there is more than one way to 'undo' in a Git project. Most of the discussion on this page touched on deeper topics that are more thoroughly explained on pages specific to the relevant Git commands. The most commonly used 'undo' tools are [git checkout](#git-checkout), [git revert](#git-revert), and [git reset](#git-reset). Some key points to remember are:  
 - Once changes have been committed they are generally permanent  
 - Use `git checkout` to move around and review the commit history  
 - `git revert` is the best tool for undoing shared public changes  
 - `git reset` is best used for undoing local private changes  
 
 In addition to the primary undo commands, we took a look at other Git utilities:  
-- [git log](https://www.atlassian.com/git/tutorials/git-log) for finding lost commits  
-- [git clean](https://www.atlassian.com/git/tutorials/undoing-changes/git-clean) for undoing uncommitted changes  
-- [git add](https://www.atlassian.com/git/tutorials/saving-changes) for modifying the staging index.  
+- [git log](#git-log) for finding lost commits  
+- [git clean](#git-clean) for undoing uncommitted changes  
+- [git add](#saving-changes) for modifying the staging index.  
 
 Each of these commands has its own in-depth documentation. To learn more about a specific command mentioned here, visit the corresponding links.
  

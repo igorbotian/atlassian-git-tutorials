@@ -14,7 +14,7 @@ As you read, remember that Git branches aren't like SVN branches. Whereas SVN br
 
 A branch represents an independent line of development. Branches serve as an abstraction for the edit/stage/commit process. You can think of them as a way to request a brand new working directory, staging area, and project history. New commits are recorded in the history for the current branch, which results in a fork in the history of the project.
 
-The git branch command lets you create, list, rename, and delete branches. It doesn’t let you switch between branches or put a forked history back together again. For this reason, `git branch` is tightly integrated with the [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) and [git merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge) commands.
+The git branch command lets you create, list, rename, and delete branches. It doesn’t let you switch between branches or put a forked history back together again. For this reason, `git branch` is tightly integrated with the [git checkout](#git-checkout) and [git merge](#git-merge) commands.
 
 #### Common Options
 
@@ -124,7 +124,7 @@ This will push a delete signal to the remote origin repository that triggers a d
 
 Summary
 
-In this document we discussed Git's branching behavior and the git branch command. The `git branch` commands primary functions are to create, list, rename and delete branches. To operate further on the resulting branches the command is commonly used with other commands like `git checkout`. Learn more about `git checkout` branch operations; such as switching branches and merging branches, on the [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) page.
+In this document we discussed Git's branching behavior and the git branch command. The `git branch` commands primary functions are to create, list, rename and delete branches. To operate further on the resulting branches the command is commonly used with other commands like `git checkout`. Learn more about `git checkout` branch operations; such as switching branches and merging branches, on the [git checkout](#git-checkout) page.
 
-Compared to other VCSs, Git's branch operations are inexpensive and frequently used. This flexibility enables powerful [Git workflow](https://www.atlassian.com/git/tutorials/comparing-workflows) customization. For more info on Git workflows visit our extended workflow discussion pages: [The
-Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), [GitFlow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), and [Forking Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow). 
+Compared to other VCSs, Git's branch operations are inexpensive and frequently used. This flexibility enables powerful [Git workflow](#comparing-workflows) customization. For more info on Git workflows visit our extended workflow discussion pages: [The
+Feature Branch Workflow](#feature-branch-workflow), [GitFlow Workflow](#gitflow-workflow), and [Forking Workflow](#forking-workflow). 

@@ -2,7 +2,7 @@
 
 SVN uses a single centralized repository to serve as the communication hub for developers, and collaboration takes place by passing changesets between the developers’ working copies and the central repository. This is different from Git's distributed collaboration model, which gives every developer their own copy of the repository, complete with its own local history and branch structure. Users typically need to share a series of commits rather than a single changeset. Instead of committing a changeset from a working copy to the central repository, Git lets you share entire branches between repositories.
 
-The `git remote` command is one piece of the broader system which is responsible for syncing changes. Records registered through the `git remote` command are used in conjunction with the [git fetch](https://www.atlassian.com/git/tutorials/syncing/git-fetch), [git push](https://www.atlassian.com/git/tutorials/syncing/git-push), and [git pull](https://www.atlassian.com/git/tutorials/syncing/git-pull) commands. These commands all have their own syncing responsibilities which can be explored on the corresponding links.
+The `git remote` command is one piece of the broader system which is responsible for syncing changes. Records registered through the `git remote` command are used in conjunction with the [git fetch](#git-fetch), [git push](#git-push), and [git pull](#git-pull) commands. These commands all have their own syncing responsibilities which can be explored on the corresponding links.
 
 #### Git remote
 
@@ -189,7 +189,7 @@ git remote show upstream
 
 #### Fetching and pulling from Git remotes
 
-Once a remote record has been configured through the use of the `git remote` command, the remote name can be passed as an argument to other Git commands to communicate with the remote repo. Both [git fetch](https://www.atlassian.com/git/tutorials/syncing/git-fetch), and [git pull](https://www.atlassian.com/git/tutorials/syncing/git-pull) can be used to read from a remote repository. Both commands have different operations that are explained in further depth on their respective links.
+Once a remote record has been configured through the use of the `git remote` command, the remote name can be passed as an argument to other Git commands to communicate with the remote repo. Both [git fetch](#git-fetch), and [git pull](#git-pull) can be used to read from a remote repository. Both commands have different operations that are explained in further depth on their respective links.
 
 #### Pushing to Git remotes
 

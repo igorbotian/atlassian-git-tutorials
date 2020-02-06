@@ -1,6 +1,6 @@
 ### git config
 
-n this document, we'll take an in-depth look at the `git config` command. We briefly discussed git config usage on our [Setting up a Repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository) page. The `git config` command is a convenience function that is used to set Git configuration values on a global or local project level. These configuration levels correspond to `.gitconfig` text files. Executing `git config` will modify a configuration text file. We'll be covering common configuration settings like email, username, and editor. We'll discuss Git aliases, which allow you to create shortcuts for frequently used Git operations. Becoming familiar with git config and the various Git configuration settings will help you create a powerful, customized Git workflow.
+n this document, we'll take an in-depth look at the `git config` command. We briefly discussed git config usage on our [Setting up a Repository](#setting-up-a-repository) page. The `git config` command is a convenience function that is used to set Git configuration values on a global or local project level. These configuration levels correspond to `.gitconfig` text files. Executing `git config` will modify a configuration text file. We'll be covering common configuration settings like email, username, and editor. We'll discuss Git aliases, which allow you to create shortcuts for frequently used Git operations. Becoming familiar with git config and the various Git configuration settings will help you create a powerful, customized Git workflow.
 
 #### Usage
 
@@ -203,4 +203,4 @@ In this article, we covered the use of the git config command. We discussed how 
 - How to reset configuration defaults  
 - How to customize git colors  
 
-Overall, `git config` is a helper tool that provides a shortcut to editing raw `git config` files on disk. We covered in depth personal customization options. Basic knowledge of git configuration options is a prerequisite for [setting up a repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository). See our guide there for a demonstration of the basics.
+Overall, `git config` is a helper tool that provides a shortcut to editing raw `git config` files on disk. We covered in depth personal customization options. Basic knowledge of git configuration options is a prerequisite for [setting up a repository](#setting-up-a-repository). See our guide there for a demonstration of the basics.

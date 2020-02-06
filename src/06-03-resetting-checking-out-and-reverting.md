@@ -1,12 +1,12 @@
 ## Resetting, Checking Out & Reverting
 
-The [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset), [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout), and [git revert](https://www.atlassian.com/git/tutorials/undoing-changes/git-revert) commands are some of the most useful tools in your Git toolbox. They all let you undo some kind of change in your repository, and the first two commands can be used to manipulate either commits or individual files.
+The [git reset](#git-reset), [git checkout](#git-checkout), and [git revert](#git-revert) commands are some of the most useful tools in your Git toolbox. They all let you undo some kind of change in your repository, and the first two commands can be used to manipulate either commits or individual files.
 
 Because they’re so similar, it’s very easy to mix up which command should be used in any given development scenario. In this article, we’ll compare the most common configurations of `git reset`, `git checkout`, and `git revert`. Hopefully, you’ll walk away with the confidence to navigate your repository using any of these commands.
 
 ![](resetting-checking-out-and-reverting-01.png)
 
-It helps to think about each command in terms of their effect on the three state management mechanisms of a Git repository: the working directory, the staged snapshot, and the commit history. These components are sometimes known as "The three trees" of Git. We explore the three trees in depth on the [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) page. Keep these mechanisms in mind as you read through this article.
+It helps to think about each command in terms of their effect on the three state management mechanisms of a Git repository: the working directory, the staged snapshot, and the commit history. These components are sometimes known as "The three trees" of Git. We explore the three trees in depth on the [git reset](#git-reset) page. Keep these mechanisms in mind as you read through this article.
 
 A checkout is an operation that moves the HEAD ref pointer to a specified commit. To demonstrate this consider the following example.
 
@@ -63,7 +63,7 @@ In addition to moving the current branch, you can also get git reset to alter th
 - `--mixed` – The staged snapshot is updated to match the specified commit, but the working directory is not affected. This is the default option.
 - `--hard` – The staged snapshot and the working directory are both updated to match the specified commit.
  
-It’s easier to think of these modes as defining the scope of a `git reset` operation. For further detailed information visit the [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) page.
+It’s easier to think of these modes as defining the scope of a `git reset` operation. For further detailed information visit the [git reset](#git-reset) page.
 
 #### Checkout old commits
 
@@ -73,7 +73,7 @@ The `git checkout` command is used to update the state of the repository to a sp
 git checkout hotfix
 ```
 
-Internally, all the above command does is move HEAD to a different branch and update the working directory to match. Since this has the potential to overwrite local changes, Git forces you to commit or [stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash) any changes in the working directory that will be lost during the checkout operation. Unlike `git reset`, `git checkout` doesn’t move any branches around.
+Internally, all the above command does is move HEAD to a different branch and update the working directory to match. Since this has the potential to overwrite local changes, Git forces you to commit or [stash](#git-stash) any changes in the working directory that will be lost during the checkout operation. Unlike `git reset`, `git checkout` doesn’t move any branches around.
 
 ![](resetting-checking-out-and-reverting-06.png)
 
@@ -108,7 +108,7 @@ Contrast this with `git reset`, which *does* alter the existing commit history. 
 
 You can also think of `git revert` as a tool for undoing *committed* changes, while `git reset HEAD` is for undoing *uncommitted* changes.
 
-Like `git checkout`, `git revert` has the potential to overwrite files in the working directory, so it will ask you to commit or [stash changes](https://www.atlassian.com/git/tutorials/saving-changes/git-stash) that would be lost during the revert operation.
+Like `git checkout`, `git revert` has the potential to overwrite files in the working directory, so it will ask you to commit or [stash changes](#git-stash) that would be lost during the revert operation.
 
 ### File-level Operations
 
@@ -148,5 +148,5 @@ Like `git reset`, this is commonly used with HEAD as the commit reference. For i
 
 ### Summary
 
-You should now have all the tools you could ever need to undo changes in a Git repository. The [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset), [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout), and [git revert](https://www.atlassian.com/git/tutorials/undoing-changes/git-revert) commands can be confusing, but when you think about their effects on the working directory, staged snapshot, and commit history, it should be easier to discern which command fits the development task at hand.
+You should now have all the tools you could ever need to undo changes in a Git repository. The [git reset](#git-reset), [git checkout](#git-checkout), and [git revert](#git-revert) commands can be confusing, but when you think about their effects on the working directory, staged snapshot, and commit history, it should be easier to discern which command fits the development task at hand.
  

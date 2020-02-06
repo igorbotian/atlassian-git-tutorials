@@ -56,7 +56,7 @@ To review, `git commit --amend` lets you take the most recent commit and add new
 
 To modify older or multiple commits, you can use `git rebase` to combine a sequence of commits into a new base commit. In standard mode, `git rebase` allows you to literally rewrite history — automatically applying commits in your current working branch to the passed branch head. Since your new commits will be replacing the old, it's important to not use `git rebase` on commits that have been pushed public, or it will appear that your project history disappeared.
 
-In these or similar instances where it's important to preserve a clean project history, adding the `-i` option to `git rebase` allows you to run `rebase interactive`. This gives you the opportunity to alter individual commits in the process, rather than moving all commits. You can learn more about interactive rebasing and additional rebase commands on the [git rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) page.
+In these or similar instances where it's important to preserve a clean project history, adding the `-i` option to `git rebase` allows you to run `rebase interactive`. This gives you the opportunity to alter individual commits in the process, rather than moving all commits. You can learn more about interactive rebasing and additional rebase commands on the [git rebase](#git-rebase) page.
 
 ##### Changing committed files
 
@@ -131,7 +131,7 @@ Using Git reset, it is now possible to change master back to the commit it was b
 
 It's important to note that the reflog only provides a safety net if changes have been committed to your local repository and that it only tracks movements of the repositories branch tip. Additionally reflog entries have an expiration date. The default expiration time for reflog entries is 90 days.
 
-For additional information, see our [git reflog](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog) page. 
+For additional information, see our [git reflog](#git-reflog) page. 
 
 #### Summary
 
@@ -144,5 +144,5 @@ In this article we discussed several methods of changing git history, and undoin
 
 
 Learn more about the commands we covered at their individual pages:  
-- [git rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)  
-- [git reflog](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog)  
+- [git rebase](#git-rebase)  
+- [git reflog](#git-reflog)  

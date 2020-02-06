@@ -14,7 +14,7 @@ Git LFS does this by replacing large files in your repository with tiny *pointer
 
 Git LFS is seamless: in your working copy you'll only see your actual file content. This means you can use Git LFS without changing your existing Git workflow; you simply `git checkout`, edit, `git add`, and `git commit` as normal. `git clone` and `git pull` operations will be significantly faster as you only download the versions of large files referenced by commits that you *actually* check out, rather than every version of the file that ever existed.
 
-To use Git LFS, you will need a Git LFS aware host such as [Bitbucket Cloud](https://bitbucket.org/) or [Bitbucket Server](https://www.atlassian.com/software/bitbucket/server). Repository users will need to have the [Git LFS command-line client installed](https://www.atlassian.com/git/tutorials/git-lfs#installing-git-lfs), or a Git LFS aware GUI client such as [Sourcetree](https://www.sourcetreeapp.com/). Fun fact: Steve Streeting, the Atlassian developer who invented Sourcetree, is also a major contributor to the Git LFS project, so Sourcetree and Git LFS work together rather well.
+To use Git LFS, you will need a Git LFS aware host such as [Bitbucket Cloud](https://bitbucket.org/) or [Bitbucket Server](https://www.atlassian.com/software/bitbucket/server). Repository users will need to have the [Git LFS command-line client installed](#installing-git-lfs), or a Git LFS aware GUI client such as [Sourcetree](https://www.sourcetreeapp.com/). Fun fact: Steve Streeting, the Atlassian developer who invented Sourcetree, is also a major contributor to the Git LFS project, so Sourcetree and Git LFS work together rather well.
 
 ### Installing Git LFS
 
@@ -47,13 +47,13 @@ Updated pre-push hook.
 Git LFS initialized.
 ```
 
-This installs a special `pre-push` [Git hook](https://www.atlassian.com/git/tutorials/git-hooks) in your repository that will transfer Git LFS files to the server when you `git push`.
+This installs a special `pre-push` [Git hook](#git-hooks) in your repository that will transfer Git LFS files to the server when you `git push`.
 
 Git LFS is automatically enabled for all [Bitbucket Cloud](https://bitbucket.org/) repositories. For [Bitbucket Server](https://www.atlassian.com/software/bitbucket/server), you'll need to enable Git LFS in your repository settings:
 
 ![](git-lfs-04.png)
 
-Once Git LFS is initialized for your repository, you can specify which files to track using [git lfs track](https://www.atlassian.com/git/tutorials/git-lfs#tracking-files).
+Once Git LFS is initialized for your repository, you can specify which files to track using [git lfs track](#tracking-files-with-git-lfs).
 
 ### Cloning an existing Git LFS repository
 
@@ -153,7 +153,7 @@ Tracking music.ogg
 Tracking phaser.ogg
 ```
 
-The patterns supported by Git LFS are the same as those supported by [.gitignore](https://www.atlassian.com/git/tutorials/gitignore), for example:
+The patterns supported by Git LFS are the same as those supported by [.gitignore](#gitignore), for example:
 
 ```
 # track all .ogg files in any directory
@@ -305,7 +305,7 @@ Use this setting with care: if you have fast moving branches, this can result in
 
 ![](git-lfs-06.png)
 
-As discussed in [Moving a Git LFS repository between hosts](https://www.atlassian.com/git/tutorials/git-lfs#moving-between-hosts), you can also elect to fetch *all* Git LFS content for your repository with `git lfs fetch --all`:
+As discussed in [Moving a Git LFS repository between hosts](#moving-a-git-lfs-repository-between-hosts), you can also elect to fetch *all* Git LFS content for your repository with `git lfs fetch --all`:
 
 ```
 $ git lfs fetch --all
@@ -332,7 +332,7 @@ This will delete any local Git LFS files that are considered *old*. An old file 
 - a recent commit
 
 By default, a recent commit is any commit created in the last *ten* days. This is calculated by adding:  
-- the value of the `lfs.fetchrecentrefsdays` property discussed in [Fetching extra Git LFS history](https://www.atlassian.com/git/tutorials/git-lfs#fetching-history) (which defaults to *seven*); to
+- the value of the `lfs.fetchrecentrefsdays` property discussed in [Fetching extra Git LFS history](#fetching-extra-git-lfs-history) (which defaults to *seven*); to
 - the value of the `lfs.pruneoffsetdays` property (which defaults to *three*)
 
 ![](git-lfs-07.png)
@@ -366,7 +366,7 @@ $ git lfs prune --dry-run --verbose
  * a1d7f7cdd6dba7307b2bac2bcfa0973244688361a48d2cebe3f3bc30babcf1ab (615.7 KB)
 ```
 
-The long hexadecimal strings output by `--verbose` mode are SHA-256 hashes (also known as Object IDs, or OIDs) of the Git LFS objects to be pruned. You can use the techniques described in [Finding paths or commits that reference a Git LFS object](https://www.atlassian.com/git/tutorials/git-lfs#finding-references) to find our more about the objects that will be pruned.
+The long hexadecimal strings output by `--verbose` mode are SHA-256 hashes (also known as Object IDs, or OIDs) of the Git LFS objects to be pruned. You can use the techniques described in [Finding paths or commits that reference a Git LFS object](#finding-paths-or-commits-that-reference-a-git-lfs-object) to find our more about the objects that will be pruned.
 
 As an additional safety check, you can use the `--verify-remote` option to check whether the remote Git LFS store has a copy of your Git LFS objects before they are pruned:
 
@@ -462,7 +462,7 @@ If you combine includes and excludes, only files that match an include pattern *
 $ git lfs fetch -I "Assets/**" -X "*.gif"
 ```
 
-Excludes and includes support the same patterns as [git lfs track](https://www.atlassian.com/git/tutorials/git-lfs#tracking-files) and `.gitignore`. You can make these patterns permanent for a particular repository by setting the `lfs.fetchinclude` and `lfs.fetchexclude` config properties:
+Excludes and includes support the same patterns as [git lfs track](#tracking-files-with-git-lfs) and `.gitignore`. You can make these patterns permanent for a particular repository by setting the `lfs.fetchinclude` and `lfs.fetchexclude` config properties:
 
 ```
 $ git config lfs.fetchinclude "Assets/**"

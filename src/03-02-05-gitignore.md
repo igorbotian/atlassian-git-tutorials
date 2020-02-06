@@ -16,14 +16,14 @@ Ignored files are usually build artifacts and machine generated files that can b
 Ignored files are tracked in a special file named `.gitignore` that is checked in at the root of your repository. There is no explicit git ignore command: instead the `.gitignore` file must be edited and committed by hand when you have new files that you wish to ignore. `.gitignore` files contain patterns that are matched against file names in your repository to determine whether or not they should be ignored.
 
 Ignoring files in Git
-- [Git ignore patterns](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#git-ignore-patterns)  
-- [Shared .gitignore files in your repository](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#shared)  
-- [Personal Git ignore rules](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#personal-git-ignore-rules)  
-- [Global Git ignore rules](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#global-git-ignore-rules)  
-- [Ignoring a previously committed file](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#ignoring-a-previously-committed)  
-- [Committing an ignored file](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#committing-an-ignored-file)  
-- [Stashing an ignored file](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#stashing-an-ignored-file)  
-- [Debugging .gitignore files](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#debugging)  
+- [Git ignore patterns](#git-ignore-patterns)  
+- [Shared .gitignore files in your repository](#shared-gitignore-files-in-your-repository)  
+- [Personal Git ignore rules](#personal-git-ignore-rules)  
+- [Global Git ignore rules](#global-git-ignore-rules)  
+- [Ignoring a previously committed file](#ignoring-a-previously-committed-file)  
+- [Committing an ignored file](#committing-an-ignored-file)  
+- [Stashing an ignored file](#stashing-an-ignored-file)  
+- [Debugging .gitignore files](#debugging-gitignore-files)  
 
 #### Git ignore patterns
 
@@ -187,7 +187,7 @@ This approach is more obvious, and less confusing, for your teammates.
 
 #### Stashing an ignored file
 
-`git stash` is a powerful Git feature for temporarily shelving and reverting local changes, allowing you to re-apply them later on. As you'd expect, by default `git stash` ignores ignored files and only stashes changes to files that are tracked by Git. However, you can invoke [git stash with the --all option](https://www.atlassian.com/git/tutorials/git-stash/#stashing-untracked-or-ignored) to stash changes to ignored and untracked files as well.
+`git stash` is a powerful Git feature for temporarily shelving and reverting local changes, allowing you to re-apply them later on. As you'd expect, by default `git stash` ignores ignored files and only stashes changes to files that are tracked by Git. However, you can invoke [git stash with the --all option](#git-stash) to stash changes to ignored and untracked files as well.
 
 #### Debugging .gitignore files
 

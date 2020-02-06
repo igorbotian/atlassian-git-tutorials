@@ -1,6 +1,6 @@
 ### git checkout
 
-This page is an examination of the `git checkout` command. It will cover usage examples and edge cases. In Git terms, a "checkout" is the act of switching between different versions of a target entity. The `git checkout` command operates upon three distinct entities: files, commits, and branches. In addition to the definition of "checkout" the phrase "checking out" is commonly used to imply the act of executing the git checkout command. In the [Undoing Changes](https://www.atlassian.com/git/tutorials/undoing-changes) topic, we saw how `git checkout` can be used to view old commits. The focus for the majority of this document will be checkout operations on branches.
+This page is an examination of the `git checkout` command. It will cover usage examples and edge cases. In Git terms, a "checkout" is the act of switching between different versions of a target entity. The `git checkout` command operates upon three distinct entities: files, commits, and branches. In addition to the definition of "checkout" the phrase "checking out" is commonly used to imply the act of executing the git checkout command. In the [Undoing Changes](#undoing-changes) topic, we saw how `git checkout` can be used to view old commits. The focus for the majority of this document will be checkout operations on branches.
 
 Checking out branches is similar to checking out old commits and files in that the working directory is updated to match the selected branch/revision; however, new changes are saved in the project history—that is, it’s not a read-only operation.
 
@@ -28,7 +28,7 @@ The above example demonstrates how to view a list of available branches by execu
 
 #### New Branches
 
-`git checkout` works hand-in-hand with [git branch](https://www.atlassian.com/git/tutorials/using-branches). The git branch command can be used to create a new branch. When you want to start a new feature, you create a new branch off `master` using `git branch new_branch`. Once created you can then use `git checkout new_branch` to switch to that branch. Additionally, The `git checkout` command accepts a `-b` argument that acts as a convenience method which will create the new branch and immediately switch to it. You can work on multiple features in a single repository by switching between them with `git checkout`.
+`git checkout` works hand-in-hand with [git branch](#using-branches). The git branch command can be used to create a new branch. When you want to start a new feature, you create a new branch off `master` using `git branch new_branch`. Once created you can then use `git checkout new_branch` to switch to that branch. Additionally, The `git checkout` command accepts a `-b` argument that acts as a convenience method which will create the new branch and immediately switch to it. You can work on multiple features in a single repository by switching between them with `git checkout`.
 
 ```
 git checkout -b <new-branch>
@@ -93,4 +93,4 @@ The point is, your development should always take place on a branch—never on a
 
 #### Summary
 
-This page focused on usage of the `git checkout` command when changing branches. In summation, `git checkout`, when used on branches, alters the target of the HEAD ref. It can be used to create branches, switch branches, and checkout remote branches. The `git checkout` command is an essential tool for standard Git operation. It is a counterpart to [git merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge). The `git checkout` and `git merge` commands are critical tools to enabling [git workflows](https://www.atlassian.com/git/tutorials/comparing-workflows).
+This page focused on usage of the `git checkout` command when changing branches. In summation, `git checkout`, when used on branches, alters the target of the HEAD ref. It can be used to create branches, switch branches, and checkout remote branches. The `git checkout` command is an essential tool for standard Git operation. It is a counterpart to [git merge](#git-merge). The `git checkout` and `git merge` commands are critical tools to enabling [git workflows](#comparing-workflows).

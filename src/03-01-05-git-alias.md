@@ -4,7 +4,7 @@ This section will focus on Git aliases. To better understand the value of Git al
 
 #### Git Alias Overview
 
-It is important to note that there is no direct `git alias` command. Aliases are created through the use of the [git config](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config) command and the Git configuration files. As with other configuration values, aliases can be created in a local or global scope.
+It is important to note that there is no direct `git alias` command. Aliases are created through the use of the [git config](#git-config) command and the Git configuration files. As with other configuration values, aliases can be created in a local or global scope.
 
 To better understand Git aliases let us create some examples.
 
@@ -29,7 +29,7 @@ This demonstrates that the aliases are now equivalent to the source commands.
 
 #### Usage
 
-Git aliasing is enabled through the use of `git config`, For command-line option and usage examples please review the [git config](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config) documentation.
+Git aliasing is enabled through the use of `git config`, For command-line option and usage examples please review the [git config](#git-config) documentation.
 
 #### Examples
 
@@ -78,4 +78,4 @@ Invoking this command will update the underlying global config file just as it h
 
 #### Git Alias Summary
 
-Git aliases are a powerful workflow tool that create shortcuts to frequently used Git commands. Using Git aliases will make you a faster and more efficient developer. Aliases can be used to wrap a sequence of Git commands into new faux Git command. Git aliases are created through the use of the git config command which essentially modifies local or global Git config files. Learn more on the [git config](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config) page.
+Git aliases are a powerful workflow tool that create shortcuts to frequently used Git commands. Using Git aliases will make you a faster and more efficient developer. Aliases can be used to wrap a sequence of Git commands into new faux Git command. Git aliases are created through the use of the git config command which essentially modifies local or global Git config files. Learn more on the [git config](#git-config) page.

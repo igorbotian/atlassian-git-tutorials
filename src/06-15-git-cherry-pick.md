@@ -30,7 +30,7 @@ config commit -m "Add bashrc"
 config push
 ```
 
-Sometimes a `feature` branch may go stale and not get merged into `master`. Sometimes a pull request might get closed without merging. Git never loses those commits and through commands like [git log](https://www.atlassian.com/git/tutorials/git-log) and [git reflog](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog) they can be found and cherry picked back to life.
+Sometimes a `feature` branch may go stale and not get merged into `master`. Sometimes a pull request might get closed without merging. Git never loses those commits and through commands like [git log](#git-log) and [git reflog](#git-reflog) they can be found and cherry picked back to life.
 
 ```
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -94,9 +94,9 @@ The `--no-commit` option will execute the cherry pick but instead of making a ne
 
 The `--signoff` option will add a 'signoff' signature line to the end of the cherry-pick commit message
 
-In addition to these helpful options `git cherry-pick` also accepts a variety of merge strategy options. Learn more about these options at the [git merge strategies](https://www.atlassian.com/git/tutorials/using-branches/merge-strategy) documentation.
+In addition to these helpful options `git cherry-pick` also accepts a variety of merge strategy options. Learn more about these options at the [git merge strategies](#merge-strategy) documentation.
 
-Additionally, `git cherry-pick` also accepts option input for merge conflict resolution, this includes options: `--abort --continue` and `--quit` this options are covered more in depth with regards to [git merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge) and [git rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
+Additionally, `git cherry-pick` also accepts option input for merge conflict resolution, this includes options: `--abort --continue` and `--quit` this options are covered more in depth with regards to [git merge](#git-merge) and [git rebase](#git-rebase).
 
 ```
 config status
@@ -107,4 +107,4 @@ config commit -m "Add bashrc"
 config push
 ```
 
-Cherry picking is a powerful and convenient command that is incredibly useful in a few scenarios. Cherry picking should not be misused in place of [git merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge) or [git rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase). The [git log](https://www.atlassian.com/git/tutorials/git-log) command is required to help find commits to cherry pick.
+Cherry picking is a powerful and convenient command that is incredibly useful in a few scenarios. Cherry picking should not be misused in place of [git merge](#git-merge) or [git rebase](#git-rebase). The [git log](#git-log) command is required to help find commits to cherry pick.

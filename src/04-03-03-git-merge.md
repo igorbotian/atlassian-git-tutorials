@@ -48,7 +48,7 @@ However, a fast-forward merge is not possible if the branches have diverged. Whe
 
 ![](git-merge-06.png)
 
-While you can use either of these merge strategies, many developers like to use fast-forward merges (facilitated through [rebasing](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)) for small features or bug fixes, while reserving 3-way merges for the integration of longer-running features. In the latter case, the resulting merge commit serves as a symbolic joining of the two branches.
+While you can use either of these merge strategies, many developers like to use fast-forward merges (facilitated through [rebasing](#git-rebase)) for small features or bug fixes, while reserving 3-way merges for the integration of longer-running features. In the latter case, the resulting merge commit serves as a symbolic joining of the two branches.
 
 Our first example demonstrates a fast-forward merge. The code below creates a new branch, adds two commits to it, then integrates it into the main line with a fast-forward merge.
 
@@ -145,4 +145,4 @@ This document is an overview of the git merge command. Merging is an essential p
 2. There are two main ways Git will merge: Fast Forward and Three way
 3. Git can automatically merge commits unless there are changes that conflict in both commit sequences.
 
-This document integrated and referenced other Git commands like: [git branch](https://www.atlassian.com/git/tutorials/using-branches), [git pull](https://www.atlassian.com/git/tutorials/syncing#git-pull), and [git fetch](https://www.atlassian.com/git/tutorials/syncing#git-fetch). Visit their corresponding stand-alone pages for more information. 
+This document integrated and referenced other Git commands like: [git branch](#using-branches), [git pull](#git-pull), and [git fetch](#git-fetch). Visit their corresponding stand-alone pages for more information. 

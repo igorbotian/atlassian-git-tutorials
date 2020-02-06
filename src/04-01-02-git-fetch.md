@@ -1,12 +1,12 @@
 ### git fetch 
 
-The `git fetch` command downloads commits, files, and refs from a remote repository into your local repo. Fetching is what you do when you want to see what everybody else has been working on. It’s similar to `svn update` in that it lets you see how the central history has progressed, but it doesn’t force you to actually merge the changes into your repository. Git isolates fetched content as a from existing local content, it has absolutely no effect on your local development work. Fetched content has to be explicitly checked out using the [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) command. This makes fetching a safe way to review commits before integrating them with your local repository.
+The `git fetch` command downloads commits, files, and refs from a remote repository into your local repo. Fetching is what you do when you want to see what everybody else has been working on. It’s similar to `svn update` in that it lets you see how the central history has progressed, but it doesn’t force you to actually merge the changes into your repository. Git isolates fetched content as a from existing local content, it has absolutely no effect on your local development work. Fetched content has to be explicitly checked out using the [git checkout](#git-checkout) command. This makes fetching a safe way to review commits before integrating them with your local repository.
 
 When downloading content from a remote repo, `git pull` and `git fetch` commands are available to accomplish the task. You can consider `git fetch` the 'safe' version of the two commands. It will download the remote content but not update your local repo's working state, leaving your current work intact. `git pull` is the more aggressive alternative, it will download the remote content for the active local branch and immediately execute `git merge` to create a merge commit for the new remote content. If you have pending changes in progress this will cause conflicts and kickoff the merge conflict resolution flow.
 
 #### How git fetch works with remote branches
 
-To better understand how `git fetch` works let us discuss how Git organizes and stores commits. Behind the scenes, in the repository's `./.git/objects` directory, Git stores all commits, local and remote. Git keeps remote and local branch commits distinctly separate through the use of branch refs. The refs for local branches are stored in the `./.git/refs/heads/`. Executing the [git branch](https://www.atlassian.com/git/tutorials/using-branches) command will output a list of the local branch refs. The following is an example of `git branch` output with some demo branch names.
+To better understand how `git fetch` works let us discuss how Git organizes and stores commits. Behind the scenes, in the repository's `./.git/objects` directory, Git stores all commits, local and remote. Git keeps remote and local branch commits distinctly separate through the use of branch refs. The refs for local branches are stored in the `./.git/refs/heads/`. Executing the [git branch](#using-branches) command will output a list of the local branch refs. The following is an example of `git branch` output with some demo branch names.
 
 ```
 git branch
@@ -70,7 +70,7 @@ The `--dry-run` option will perform a demo run of the command. I will output exa
 ##### git fetch a remote branch  
 The following example will demonstrate how to fetch a remote branch and update your local working state to the remote contents. In this example, lets assume there is a central repo origin which the local repository has been cloned from using the `git clone` command. Let us also assume an additional remote repository named `coworkers_repo` that contains a `feature_branch` which we will configure and fetch. With these assumptions set let us continue the example.
 
-Firstly we will need to configure the remote repo using the [git remote](https://www.atlassian.com/git/tutorials/syncing) command.
+Firstly we will need to configure the remote repo using the [git remote](#syncing) command.
 
 ```
 git remote coworkers_repo git@bitbucket.org:coworker/coworkers_repo.git
@@ -150,4 +150,4 @@ The `origin/master` and master branches now point to the same commit, and you ar
 
 #### git fetch summary
 
-In review, `git fetch` is a primary command used to download contents from a remote repository. `git fetch` is used in conjunction with `git remote`, `git branch`, `git checkout`, and [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) to update a local repository to the state of a remote. The `git fetch` command is a critical piece of collaborative git work flows. `git fetch` has similar behavior to `git pull` however `git fetch` can be considered a safer, nondestructive version.
+In review, `git fetch` is a primary command used to download contents from a remote repository. `git fetch` is used in conjunction with `git remote`, `git branch`, `git checkout`, and [git reset](#git-reset) to update a local repository to the state of a remote. The `git fetch` command is a critical piece of collaborative git work flows. `git fetch` has similar behavior to `git pull` however `git fetch` can be considered a safer, nondestructive version.

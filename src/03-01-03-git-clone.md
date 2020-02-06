@@ -6,7 +6,7 @@ Here we'll examine the `git clone` command in depth. `git clone` is a Git comman
 - Using shallow options to partially clone repositories  
 - Git URL syntax and supported protocols  
 
-On the [setting up a repository guide](https://www.atlassian.com/git/tutorials/setting-up-a-repository), we covered a basic use case of `git clone`. This page will explore more complex cloning and configuration scenarios.
+On the [setting up a repository guide](#setting-up-a-repository), we covered a basic use case of `git clone`. This page will explore more complex cloning and configuration scenarios.
 
 #### Purpose: repo-to-repo collaboration development copy
 
@@ -16,13 +16,13 @@ If a project has already been set up in a central repository, the git clone comm
 
 It’s important to understand that Git’s idea of a “working copy” is very different from the working copy you get by checking out code from an SVN repository. Unlike SVN, Git makes no distinction between the working copy and the central repository—they're all full-fledged [Git repositories](http://bitbucket.org/code-repository).
 
-This makes collaborating with Git fundamentally different than with SVN. Whereas SVN depends on the relationship between the central repository and the working copy, Git’s collaboration model is based on repository-to-repository interaction. Instead of checking a working copy into SVN’s central repository, you [push](https://www.atlassian.com/git/tutorials/syncing/git-push) or [pull](https://www.atlassian.com/git/tutorials/syncing/git-pull) commits from one repository to another.
+This makes collaborating with Git fundamentally different than with SVN. Whereas SVN depends on the relationship between the central repository and the working copy, Git’s collaboration model is based on repository-to-repository interaction. Instead of checking a working copy into SVN’s central repository, you [push](#git-push) or [pull](#git-pull) commits from one repository to another.
 
 ![](git-clone-01.png)
 
 ![](git-clone-02.png)
 
-Of course, there’s nothing stopping you from giving certain Git repos special meaning. For example, by simply designating one Git repo as the “central” repository, it’s possible to replicate a [centralized workflow](https://www.atlassian.com/git/tutorials/comparing-workflows) using Git. The point is, this is accomplished through conventions rather than being hardwired into the VCS itself.
+Of course, there’s nothing stopping you from giving certain Git repos special meaning. For example, by simply designating one Git repo as the “central” repository, it’s possible to replicate a [centralized workflow](#comparing-workflows) using Git. The point is, this is accomplished through conventions rather than being hardwired into the VCS itself.
 
 #### Usage
 
@@ -30,7 +30,7 @@ Of course, there’s nothing stopping you from giving certain Git repos special 
 
 As a convenience, cloning automatically creates a remote connection called "origin" pointing back to the original repository. This makes it very easy to interact with a central repository. This automatic connection is established by creating Git refs to the remote branch heads under `refs/remotes/origin` and by initializing `remote.origin.url` and `remote.origin.fetch` configuration variables.
 
-An example demonstrating using git clone can be found on the [setting up a repository guide](https://www.atlassian.com/git/tutorials/setting-up-a-repository). The example below demonstrates how to obtain a local copy of a central repository stored on a server accessible at `example.com` using the SSH username john:
+An example demonstrating using git clone can be found on the [setting up a repository guide](#setting-up-a-repository). The example below demonstrates how to obtain a local copy of a central repository stored on a server accessible at `example.com` using the SSH username john:
 
 ```
 git clone ssh://john@example.com/path/to/my-project.git
@@ -96,7 +96,7 @@ For a comprehensive list of other git clone options visit the [official Git docu
 git clone --template=<template_directory> <repo location>
 ```
 
-Clones the repo at `<repo location>` and applies the template from `<template directory>` to the newly created local branch. A thorough refrence on Git templates can be found on our [git init page](http://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init).
+Clones the repo at `<repo location>` and applies the template from `<template directory>` to the newly created local branch. A thorough refrence on Git templates can be found on our [git init page](#git-init).
  
 
 Git URLs
@@ -122,4 +122,4 @@ In this document we took a deep look at git clone. The most important takeaways 
 4. There are many different configuration options available that change the content of the clone
  
 
-For further, deeper reference on git clone functionality, consult the [official Git documentation](https://git-scm.com/docs/git-clone). We also cover practical examples of git clone in our [setting up a repository guide](https://www.atlassian.com/git/tutorials/setting-up-a-repository).
+For further, deeper reference on git clone functionality, consult the [official Git documentation](https://git-scm.com/docs/git-clone). We also cover practical examples of git clone in our [setting up a repository guide](#setting-up-a-repository).

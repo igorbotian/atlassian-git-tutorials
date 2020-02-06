@@ -33,7 +33,7 @@ Pointing `git init` to an existing project directory will execute the same initi
 git init <project directory>
 ```
 
-Visit the [git init](http://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init) page for a more detailed resource on `git init`.
+Visit the [git init](#git-init) page for a more detailed resource on `git init`.
 
 #### Cloning an existing repository: git clone
 
@@ -56,7 +56,7 @@ An example Git SSH URL would be: `git@bitbucket.org:rhyolight/javascript-data-st
 
 When executed, the latest version of the remote repo files on the master branch will be pulled down and added to a new folder. The new folder will be named after the REPONAME in this case `javascript-data-store`. The folder will contain the full history of the remote repository and a newly created master branch.
 
-For more documentation on git clone usage and supported Git URL formats, visit the git [clone Page](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone).
+For more documentation on git clone usage and supported Git URL formats, visit the git [clone Page](#git-clone).
 
 #### Saving changes to the repository: git add and git commit
 
@@ -75,7 +75,7 @@ git commit -m "added CommitTest.txt to the repo"
 
 After executing this example, your repo will now have `CommitTest.txt` added to the history and will track future updates to the file.
 
-This example introduced two additional git commands: `add` and `commit`. This was a very limited example, but both commands are covered more in depth on the [git add](https://www.atlassian.com/git/tutorials/saving-changes) and [git commit](https://www.atlassian.com/git/tutorials/saving-changes#git-commit) pages. Another common use case for `git add` is the `--all` option. Executing git add --all will take any changed and untracked files in the repo and add them to the repo and update the repo's working tree.
+This example introduced two additional git commands: `add` and `commit`. This was a very limited example, but both commands are covered more in depth on the [git add](#saving-changes) and [git commit](#git-commit) pages. Another common use case for `git add` is the `--all` option. Executing git add --all will take any changed and untracked files in the repo and add them to the repo and update the repo's working tree.
 
 #### Repo-to-repo collaboration: git push
 
@@ -109,7 +109,7 @@ git push -u <remote_name> <local_branch_name>
 
 This command will push the local repo branch under `<local_branc_name>` to the remote repo at `<remote_name>`.
 
-For more in-depth look at `git remote`, see the [Git remote page](https://www.atlassian.com/git/tutorials/syncing#git-remote).
+For more in-depth look at `git remote`, see the [Git remote page](#git-remote).
 
 In addition to configuring a remote repo URL, you may also need to set global Git configuration options such as username, or email. The `git config` command lets you configure your Git installation (or an individual repository) from the command line. This command can define everything from user info, to preferences, to the behavior of a repository. Several common configuration options are listed below.
 
@@ -144,19 +144,19 @@ Create a shortcut for a Git command. This is a powerful utility to create custom
 git config --global alias.ci commit
 ```
 
-This creates a `ci` command that you can execute as a shortcut to `git commit`. To learn more about git aliases visit the [git config page](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config).
+This creates a `ci` command that you can execute as a shortcut to `git commit`. To learn more about git aliases visit the [git config page](#git-config).
 
 ```
 git config --system core.editor <editor>
 ```
 
-Define the text editor used by commands like `git commit` for all users on the current machine. The `<editor>` argument should be the command that launches the desired editor (e.g., `vi`). This example introduces the `--system` option. The `--system` option will set the configuration for the entire system, meaning all users and repos on a machine. For more detailed information on configuration levels visit the [git config page](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config).
+Define the text editor used by commands like `git commit` for all users on the current machine. The `<editor>` argument should be the command that launches the desired editor (e.g., `vi`). This example introduces the `--system` option. The `--system` option will set the configuration for the entire system, meaning all users and repos on a machine. For more detailed information on configuration levels visit the [git config page](#git-config).
 
 ```
 git config --global --edit
 ```
 
-Open the global configuration file in a text editor for manual editing. An in-depth guide on how to configure a text editor for git to use can be found on the [Git config page](http://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config).
+Open the global configuration file in a text editor for manual editing. An in-depth guide on how to configure a text editor for git to use can be found on the [Git config page](#git-config).
 
 ##### Discussion
 
@@ -201,10 +201,10 @@ git config --global alias.up rebase
 git config --global alias.ci commit
 ```
 
-This will produce the `~/.gitconfig` file from the previous section. Take a more in-depth look at git config on the [git config page](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config).
+This will produce the `~/.gitconfig` file from the previous section. Take a more in-depth look at git config on the [git config page](#git-config).
 
 #### Summary
 
-Here we demonstarted how to create a git repository using two methods: [git init](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init) and [git clone](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone). This guide can be applied to manage software source code or other content that needs to be versioned. [Git add](https://www.atlassian.com/git/tutorials/saving-changes), [git commit](https://www.atlassian.com/git/tutorials/saving-changes#git-commit), [git push](https://www.atlassian.com/git/tutorials/syncing#git-push), and [git remote](https://www.atlassian.com/git/tutorials/syncing#git-remote) were also introduced and utilized at a high level. 
+Here we demonstarted how to create a git repository using two methods: [git init](#git-init) and [git clone](#git-clone). This guide can be applied to manage software source code or other content that needs to be versioned. [Git add](#saving-changes), [git commit](#git-commit), [git push](#git-push), and [git remote](#git-remote) were also introduced and utilized at a high level. 
 
 Read our [guide about which code repository system is right for your team](http://bitbucket.org/code-repository)! 

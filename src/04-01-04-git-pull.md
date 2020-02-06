@@ -1,6 +1,6 @@
 ### git pull
 
-The `git pull` command is used to fetch and download content from a remote repository and immediately update the local repository to match that content. Merging remote upstream changes into your local repository is a common task in Git-based collaboration work flows. The `git pull` command is actually a combination of two other commands, [git fetch](https://www.atlassian.com/git/tutorials/syncing/git-fetch) followed by [git merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge). In the first stage of operation `git pull` will execute a `git fetch` scoped to the local branch that HEAD is pointed at. Once the content is downloaded, `git pull` will enter a merge workflow. A new merge commit will be-created and HEAD updated to point at the new commit.
+The `git pull` command is used to fetch and download content from a remote repository and immediately update the local repository to match that content. Merging remote upstream changes into your local repository is a common task in Git-based collaboration work flows. The `git pull` command is actually a combination of two other commands, [git fetch](#git-fetch) followed by [git merge](#git-merge). In the first stage of operation `git pull` will execute a `git fetch` scoped to the local branch that HEAD is pointed at. Once the content is downloaded, `git pull` will enter a merge workflow. A new merge commit will be-created and HEAD updated to point at the new commit.
 
 #### Git pull usage
 
@@ -38,7 +38,7 @@ Similar to the default invocation, fetches the remote content but does not creat
 git pull --rebase
 ```
  
-Same as the previous pull Instead of using `git merge` to integrate the remote branch with the local one, use [git rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
+Same as the previous pull Instead of using `git merge` to integrate the remote branch with the local one, use [git rebase](#git-rebase).
 
 ```
 git pull --verbose
@@ -60,7 +60,7 @@ You start out thinking your repository is synchronized, but then `git fetch` rev
 
 ##### Git pull and syncing
 
-`git pull` is one of many commands that claim the responsibility of 'syncing' remote content. The [git remote](https://www.atlassian.com/git/tutorials/syncing) command is used to specify what remote endpoints the syncing commands will operate on. The [git push](https://www.atlassian.com/git/tutorials/syncing/git-push) command is used to upload content to a remote repository.
+`git pull` is one of many commands that claim the responsibility of 'syncing' remote content. The [git remote](#syncing) command is used to specify what remote endpoints the syncing commands will operate on. The [git push](#git-push) command is used to upload content to a remote repository.
 
 The `git fetch` command can be confused with `git pull`. They are both used to download remote content. An important safety distinction can me made between `git pull` and `get fetch`. `git fetch` can be considered the "safe" option whereas, `git pull` can be considered unsafe. `git fetch` will download the remote content and not alter the state of the local repository. Alternatively, `git pull` will download remote content and immediately attempt to change the local state to match that content. This may unintentionally cause the local repository to get in a conflicted state.
 

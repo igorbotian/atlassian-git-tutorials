@@ -8,7 +8,7 @@ Reverting should be used when you want to apply the inverse of a commit from you
 
 #### How it works
 
-The `git revert` command is used for undoing changes to a repository's commit history. Other 'undo' commands like, [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) and [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset), move the HEAD and branch ref pointers to a specified commit. Git revert also takes a specified commit, however, `git revert` does not move ref pointers to this commit. A revert operation will take the specified commit, inverse the changes from that commit, and create a new "revert commit". The ref pointers are then updated to point at the new revert commit making it the tip of the branch.
+The `git revert` command is used for undoing changes to a repository's commit history. Other 'undo' commands like, [git checkout](#git-checkout) and [git reset](#git-reset), move the HEAD and branch ref pointers to a specified commit. Git revert also takes a specified commit, however, `git revert` does not move ref pointers to this commit. A revert operation will take the specified commit, inverse the changes from that commit, and create a new "revert commit". The ref pointers are then updated to point at the new revert commit making it the tip of the branch.
 
 To demonstrate let’s create an example repo using the command line examples below:
 
@@ -77,7 +77,7 @@ This is the inverse of the `-e` option. The revert will not open the editor.
 --no-commit
 ```
 
-Passing this option will prevent `git revert` from creating a new commit that inverses the target commit. Instead of creating the new commit this option will add the inverse changes to the Staging Index and Working Directory. These are the other trees Git uses to manage state the state of the repository. For more info visit the [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) page.
+Passing this option will prevent `git revert` from creating a new commit that inverses the target commit. Instead of creating the new commit this option will add the inverse changes to the Staging Index and Working Directory. These are the other trees Git uses to manage state the state of the repository. For more info visit the [git reset](#git-reset) page.
 
 #### Resetting vs. reverting
 
@@ -87,10 +87,10 @@ It's important to understand that `git revert` undoes a single commit—it does 
 
 ![](git-revert-03.png)
 
-Reverting has two important advantages over resetting. First, it doesn’t change the project history, which makes it a “safe” operation for commits that have already been published to a shared repository. For details about why altering shared history is dangerous, please see the [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) page.
+Reverting has two important advantages over resetting. First, it doesn’t change the project history, which makes it a “safe” operation for commits that have already been published to a shared repository. For details about why altering shared history is dangerous, please see the [git reset](#git-reset) page.
 
-Second, `git revert` is able to target an individual commit at an arbitrary point in the history, whereas `git reset` can only work backward from the current commit. For example, if you wanted to undo an old commit with git reset, you would have to remove all of the commits that occurred after the target commit, remove it, then re-commit all of the subsequent commits. Needless to say, this is not an elegant undo solution. For a more detailed discussion on the differences between `git revert` and other 'undo' commands see [Resetting, Checking Out and Reverting](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting).
+Second, `git revert` is able to target an individual commit at an arbitrary point in the history, whereas `git reset` can only work backward from the current commit. For example, if you wanted to undo an old commit with git reset, you would have to remove all of the commits that occurred after the target commit, remove it, then re-commit all of the subsequent commits. Needless to say, this is not an elegant undo solution. For a more detailed discussion on the differences between `git revert` and other 'undo' commands see [Resetting, Checking Out and Reverting](#resetting-checking-out-and-reverting).
 
 #### Summary
 
-The `git revert` command is a forward-moving undo operation that offers a safe method of undoing changes. Instead of deleting or orphaning commits in the commit history, a revert will create a new commit that inverses the changes specified. `git revert` is a safer alternative to `git reset` in regards to losing work. To demonstrate the effects of `git revert` we leveraged other commands that have more in-depth documentation on their individual pages: [git log](https://www.atlassian.com/git/tutorials/git-log), [git commit](https://www.atlassian.com/git/tutorials/saving-changes#git-commit), and [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset).
+The `git revert` command is a forward-moving undo operation that offers a safe method of undoing changes. Instead of deleting or orphaning commits in the commit history, a revert will create a new commit that inverses the changes specified. `git revert` is a safer alternative to `git reset` in regards to losing work. To demonstrate the effects of `git revert` we leveraged other commands that have more in-depth documentation on their individual pages: [git log](#git-log), [git commit](#git-commit), and [git reset](#git-reset).

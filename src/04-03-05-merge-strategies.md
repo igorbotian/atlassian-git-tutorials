@@ -60,11 +60,11 @@ Explicit merges are the default merge type. The 'explicit' part is that they cre
 implicit merge via rebase or fast-forward merge
 ```
 
-Whereas explicit merges create a merge commit, implicit merges do not. An implicit merge takes a series of commits from a specified branch head and applies them to the top of a target branch. Implicit merges are triggered by [rebase events](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase), or [fast forward merges](https://www.atlassian.com/git/tutorials/using-branches/git-merge). An implicit merge is an ad-hoc selection of commits from a specified branch.
+Whereas explicit merges create a merge commit, implicit merges do not. An implicit merge takes a series of commits from a specified branch head and applies them to the top of a target branch. Implicit merges are triggered by [rebase events](#git-rebase), or [fast forward merges](#git-merge). An implicit merge is an ad-hoc selection of commits from a specified branch.
 
 ##### Squash on merge, generally without explicit merge
 
-Another type of implicit merge is a squash. A squash can be performed during an [interactive rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase). A squash merge will take the commits from a target branch and combine or squash them in to one commit. This commit is then appended to the HEAD of the merge base branch. A squash is commonly used to keep a 'clean history' during a merge. The target merge branch can have a verbose history of frequent commits. When squashed and merged the target branches commit history then becomes a singular squashed 'branch commit'. This technique is useful with git workflows that utilize feature branches.
+Another type of implicit merge is a squash. A squash can be performed during an [interactive rebase](#git-rebase). A squash merge will take the commits from a target branch and combine or squash them in to one commit. This commit is then appended to the HEAD of the merge base branch. A squash is commonly used to keep a 'clean history' during a merge. The target merge branch can have a verbose history of frequent commits. When squashed and merged the target branches commit history then becomes a singular squashed 'branch commit'. This technique is useful with git workflows that utilize feature branches.
 
 ```
 git checkout master
@@ -99,7 +99,7 @@ This option spends extra time to avoid mis-merges on unimportant matching lines.
 diff-algorithim
 ```
 
-This option allows specification of an explicit diff-algorithim. The diff-algorithims are shared with the [git diff](https://www.atlassian.com/git/tutorials/saving-changes/git-diff) command.
+This option allows specification of an explicit diff-algorithim. The diff-algorithims are shared with the [git diff](#git-diff) command.
 
 ```
 ignore-*

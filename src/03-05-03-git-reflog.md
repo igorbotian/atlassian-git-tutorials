@@ -7,7 +7,7 @@ This page provides a detailed discussion of the `git reflog` command. Git keeps 
 
 Reflogs track when Git refs were updated in the local repository. In addition to branch tip reflogs, a special reflog is maintained for the Git stash. Reflogs are stored in directories under the local repository's `.git` directory. git reflog directories can be found at `.git/logs/refs/heads/.`, `.git/logs/HEAD`, and also `.git/logs/refs/stash` if the git stash has been used on the repo.
 
-We discussed `git reflog` at a high level on the [Rewriting History](https://www.atlassian.com/git/tutorials/rewriting-history) Page. This document will cover: extended configuration options of `git reflog`, common use-cases and pitfalls of `git reflog`, how to undo changes with `git reflog`, and more.
+We discussed `git reflog` at a high level on the [Rewriting History](#rewriting-history) Page. This document will cover: extended configuration options of `git reflog`, common use-cases and pitfalls of `git reflog`, how to undo changes with `git reflog`, and more.
 
 #### Basic usage
 
@@ -36,7 +36,7 @@ f34388b HEAD@{6}: commit: expand on color support
 9962aed HEAD@{7}: commit: a git editor -> the Git editor
 ```
 
-Visit the [Rewriting History](https://www.atlassian.com/git/tutorials/rewriting-history) page for another example of common reflog access.
+Visit the [Rewriting History](#rewriting-history) page for another example of common reflog access.
 
 #### Reflog references
 
@@ -196,4 +196,4 @@ In this tutorial we discussed the `git reflog` command. Some key points covered 
 - How to undo a git rebase using the reflog  
 - How specify and view time based reflog entries  
 
-We briefly mentioned that `git reflog` can be used with other git commands like [git checkout](https://www.atlassian.com/git/tutorials/using-branches#git-checkout), [git reset](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting), and [git merge](https://www.atlassian.com/git/tutorials/git-merge). Learn more at their respective pages. For additional discussion on refs and the reflog, [learn more here](https://www.atlassian.com/git/tutorials/refs-and-the-reflog).
+We briefly mentioned that `git reflog` can be used with other git commands like [git checkout](#git-checkout), [git reset](#resetting-checking-out-and-reverting), and [git merge](#git-merge). Learn more at their respective pages. For additional discussion on refs and the reflog, [learn more here](#refs-and-the-reflog).

@@ -51,7 +51,7 @@ The new SSH key is now registered and ready to use!
 
 ### Generate an SSH Key on Windows
 
-Windows environments do not have a standard default unix shell. External shell programs will need to be installed for to have a complete keygen experience. The most straight forward option is to utilize [Git Bash](https://www.atlassian.com/git/tutorials/git-bash). Once Git Bash is installed the same steps for Linux and Mac can be followed within the Git Bash shell.
+Windows environments do not have a standard default unix shell. External shell programs will need to be installed for to have a complete keygen experience. The most straight forward option is to utilize [Git Bash](#git-bash). Once Git Bash is installed the same steps for Linux and Mac can be followed within the Git Bash shell.
 
 ### Windows Linux Subsystem
 

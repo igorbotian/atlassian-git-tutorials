@@ -99,7 +99,7 @@ After the above, you can go back to use your normal git commands, but your work 
 
 #### Solution for controlling when you update large files: submodules
 
-Another way to handle huge binary asset folders is to split those into a separate repository and pull the assets in your main project using Git submodules. This gives you a way to control when you update the assets. See more on submodules in these posts: [Git submodules core concept and tips](https://www.atlassian.com/blog/git/git-submodules-core-concept-workflows-and-tips?_ga=2.41412194.1564368919.1571097409-1339596144.1562091064), and [alternatives to Git submodules](https://www.atlassian.com/git/tutorials/git-subtree).
+Another way to handle huge binary asset folders is to split those into a separate repository and pull the assets in your main project using Git submodules. This gives you a way to control when you update the assets. See more on submodules in these posts: [Git submodules core concept and tips](https://www.atlassian.com/blog/git/git-submodules-core-concept-workflows-and-tips?_ga=2.41412194.1564368919.1571097409-1339596144.1562091064), and [alternatives to Git submodules](#git-subtree).
 
 ### [UPDATE] …or you can skip all that and use Git LFS
 

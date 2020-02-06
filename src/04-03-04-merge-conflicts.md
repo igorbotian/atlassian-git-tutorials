@@ -1,6 +1,6 @@
 ### Merge conflicts
 
-Version control systems are all about managing contributions between multiple distributed authors ( usually developers ). Sometimes multiple developers may try to edit the same content. If Developer A tries to edit code that Developer B is editing a conflict may occur. To alleviate the occurrence of conflicts developers will work in separate [isolated branches](https://www.atlassian.com/git/tutorials/using-branches). The `git merge` command's primary responsibility is to combine separate branches and resolve any conflicting edits.
+Version control systems are all about managing contributions between multiple distributed authors ( usually developers ). Sometimes multiple developers may try to edit the same content. If Developer A tries to edit code that Developer B is editing a conflict may occur. To alleviate the occurrence of conflicts developers will work in separate [isolated branches](#using-branches). The `git merge` command's primary responsibility is to combine separate branches and resolve any conflicting edits.
 
 #### Understanding merge conflicts
 
@@ -88,7 +88,7 @@ Boom!. A conflict appears. Thanks, Git for letting us know about this!
 
 #### How to identify merge conflicts
 
-As we have experienced from the proceeding example, Git will produce some descriptive output letting us know that a CONFLICT has occcured. We can gain further insight by running the [git status](https://www.atlassian.com/git/tutorials/inspecting-a-repository) command
+As we have experienced from the proceeding example, Git will produce some descriptive output letting us know that a CONFLICT has occcured. We can gain further insight by running the [git status](#inspecting-a-repository) command
 
 ```
 $ git status
@@ -197,4 +197,4 @@ git reset
 
 Merge conflicts can be an intimidating experience. Luckily, Git offers powerful tools to help navigate and resolve conflicts. Git can handle most merges on its own with automatic merging features. A conflict arises when two separate branches have made edits to the same line in a file, or when a file has been deleted in one branch but edited in the other. Conflicts will most likely happen when working in a team environment.
 
-There are many tools to help resolve merge conflicts. Git has plenty of command line tools we discussed here. For more detailed information on these tools visit stand-alone pages for [git log](https://www.atlassian.com/git/tutorials/git-log), [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset), [git status](https://www.atlassian.com/git/tutorials/inspecting-a-repository), [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout), and [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset). In addition to the Git, many third-party tools offer streamlined merge conflict support features.
+There are many tools to help resolve merge conflicts. Git has plenty of command line tools we discussed here. For more detailed information on these tools visit stand-alone pages for [git log](#git-log), [git status](#inspecting-a-repository), [git checkout](#git-checkout), and [git reset](#git-reset). In addition to the Git, many third-party tools offer streamlined merge conflict support features.

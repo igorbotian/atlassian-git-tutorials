@@ -1,6 +1,6 @@
 ### git status
 
-The `git status` command displays the state of the working directory and the staging area. It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. Status output does _not_ show you any information regarding the committed project history. For this, you need to use [git log](https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-log).
+The `git status` command displays the state of the working directory and the staging area. It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. Status output does _not_ show you any information regarding the committed project history. For this, you need to use [git log](#git-log).
 
 #### Related git commands
 
@@ -67,4 +67,4 @@ git status
 # nothing to commit (working directory clean)
 ```
 
-The first status output will show the file as unstaged. The git add action will be reflected in the second `git status`, and the final status output will tell you that there is nothing to commit—the working directory matches the most recent commit. Some Git commands (e.g., [git merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge)) require the working directory to be clean so that you don't accidentally overwrite changes.
+The first status output will show the file as unstaged. The git add action will be reflected in the second `git status`, and the final status output will tell you that there is nothing to commit—the working directory matches the most recent commit. Some Git commands (e.g., [git merge](#git-merge)) require the working directory to be clean so that you don't accidentally overwrite changes.

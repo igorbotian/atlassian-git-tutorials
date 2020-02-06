@@ -12,7 +12,7 @@ In order to demonstrate `git blame` we need a repository with some history. We w
 git clone https://kevzettler@bitbucket.org/kevzettler/git-blame-example.git && cd git-blame-example
 ```
 
-Now that we have a copy of the example code we can start exploring it with `git blame`. The state of the example repo can be examined using [git log](https://www.atlassian.com/git/tutorials/git-log). The commit history should look like the following:
+Now that we have a copy of the example code we can start exploring it with `git blame`. The state of the example repo can be examined using [git log](#git-log). The commit history should look like the following:
 
 ```
 $ git log
@@ -111,7 +111,7 @@ The `-C` option detects lines that were moved or copied from other files. This w
 
 #### Git Blame vs Git Log
 
-While git blame displays the last author that modified a line, often times you will want to know when a line was originally added. This can be cumbersome to achieve using `git blame`. It requires a combination of the `-w`, `-C`, and `-M` options. It can be far more convenient to use the [git log](https://www.atlassian.com/git/tutorials/git-log) command.
+While git blame displays the last author that modified a line, often times you will want to know when a line was originally added. This can be cumbersome to achieve using `git blame`. It requires a combination of the `-w`, `-C`, and `-M` options. It can be far more convenient to use the [git log](#git-log) command.
 
 To list all original commits in-which a specific code piece was added or modified execute `git log` with the `-S` option. Append the `-S` option with the code you are looking for. Let's take one of the lines from the README output above to use as an example. Let us take the text "CSS3D and WebGL renderers" from Line 12 of the README output.
 
@@ -122,8 +122,8 @@ $ git log -S"CSS3D and WebGL renderers." --pretty=format:'%h %an %ad %s'
  cb20237cc Mr.doob Mon Dec 31 00:22:36 2012 +0100 Removed DOMRenderer. Now with the CSS3DRenderer it has become irrelevant.
 ```
 
-This output shows us that content from the README was added or modified 3 times by 3 different authors. It was originally added in commit `cb20237cc` by `Mr.doob`. In this example, git log has also been prepended with the `--pretty-format` option. This option converts the default output format of git log into one that matches the format of `git log`. For more information on usage and configuration options visit the [git log](https://www.atlassian.com/git/tutorials/git-log) page.
+This output shows us that content from the README was added or modified 3 times by 3 different authors. It was originally added in commit `cb20237cc` by `Mr.doob`. In this example, git log has also been prepended with the `--pretty-format` option. This option converts the default output format of git log into one that matches the format of `git log`. For more information on usage and configuration options visit the [git log](#git-log) page.
 
 #### Summary
 
-The `git blame` command is used to examine the contents of a file line by line and see when each line was last modified and who the author of the modifications was. The output format of `git blame` can be altered with various command line options. Online Git hosting solutions like Bitbucket offer *blame views*, which offer a superior user experience to command line `git blame` usage. `git blame` and git log can be used in combination to help discover the history of a file's contents. The `git log` command has some similar blame functionality, to learn more visit the [git log](https://www.atlassian.com/git/tutorials/git-log) overview page.
+The `git blame` command is used to examine the contents of a file line by line and see when each line was last modified and who the author of the modifications was. The output format of `git blame` can be altered with various command line options. Online Git hosting solutions like Bitbucket offer *blame views*, which offer a superior user experience to command line `git blame` usage. `git blame` and git log can be used in combination to help discover the history of a file's contents. The `git log` command has some similar blame functionality, to learn more visit the [git log](#git-log) overview page.

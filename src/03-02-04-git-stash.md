@@ -2,15 +2,15 @@
 
 `git stash` temporarily shelves (or *stashes*) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on. Stashing is handy if you need to quickly switch context and work on something else, but you're mid-way through a code change and aren't quite ready to commit.
 - Git Stash  
-    - [Stashing your work](https://www.atlassian.com/git/tutorials/saving-changes/git-stash#stashing-your-work)  
-    - [Re-applying your stashed changes](https://www.atlassian.com/git/tutorials/saving-changes/git-stash#re-applying-your-stashed-changes)  
-    - [Stashing untracked or ignored files](https://www.atlassian.com/git/tutorials/saving-changes/git-stash#stashing-untracked-or-ignored)  
-    - [Managing multiple stashes](https://www.atlassian.com/git/tutorials/saving-changes/git-stash#managing-multiple-stashes)  
-    - [Viewing stash diffs](https://www.atlassian.com/git/tutorials/saving-changes/git-stash#viewing-stash-diffs)  
-    - [Partial stashes](https://www.atlassian.com/git/tutorials/saving-changes/git-stash#partial-stashes)  
-    - [Creating a branch from your stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash#creating-a-branch-from-your-stash)  
-    - [Cleaning up your stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash#cleaning-up-your-stash)  
-    - [How git stash works](https://www.atlassian.com/git/tutorials/saving-changes/git-stash#how-git-stash-works)  
+    - [Stashing your work](#stashing-your-work)  
+    - [Re-applying your stashed changes](#re-applying-your-stashed-changes)  
+    - [Stashing untracked or ignored files](#stashing-untracked-or-ignored-files)  
+    - [Managing multiple stashes](#managing-multiple-stashes)  
+    - [Viewing stash diffs](#viewing-stash-diffs)  
+    - [Partial stashes](#partial-stashes)  
+    - [Creating a branch from your stash](#creating-a-branch-from-your-stash)  
+    - [Cleaning up your stash](#cleaning-up-your-stash)  
+    - [How git stash works](#how-git-stash-works)  
 
 #### Stashing your work
 
@@ -147,7 +147,7 @@ On branch master
 nothing to commit, working tree clean
 ```
 
-You can include changes to [ignored](https://www.atlassian.com/git/tutorials/gitignore) files as well by passing the `-a` option (or `--all`) when running `git stash`.
+You can include changes to [ignored](#gitignore) files as well by passing the `-a` option (or `--all`) when running `git stash`.
 
 ![](git-stash-01.png)
 

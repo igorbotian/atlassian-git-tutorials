@@ -10,7 +10,7 @@ The advanced features of git log can be split into two categories: formatting ho
 
 First, this article will take a look at the many ways in which git log’s output can be formatted. Most of these come in the form of flags that let you request more or less information from git log.
 
-If you don’t like the default git log format, you can use git config’s aliasing functionality to create a shortcut for any of the formatting options discussed below. Please see in [The git config Command](https://www.atlassian.com/git/tutorials/setting-up-a-repository#git-config) for how to set up an alias.
+If you don’t like the default git log format, you can use git config’s aliasing functionality to create a shortcut for any of the formatting options discussed below. Please see in [The git config Command](#git-config) for how to set up an alias.
 
 #### Oneline
 

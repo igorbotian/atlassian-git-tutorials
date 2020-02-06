@@ -53,7 +53,7 @@ Central repositories are often created through 3rd party Git hosting services li
 
 ##### Clone the central repository
 
-Next, each developer creates a local copy of the entire project. This is accomplished via the [git clone](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone) command:
+Next, each developer creates a local copy of the entire project. This is accomplished via the [git clone](#git-clone) command:
 
 ```
 git clone ssh://user@host/path/to/repo.git
@@ -115,7 +115,7 @@ Meanwhile, Mary is working on her own feature in her own local repository using 
 
 ![](centralized-workflow-07.png)
 
-Once John finishes his feature, he should publish his local commits to the central repository so other team members can access it. He can do this with the [git push](https://www.atlassian.com/git/tutorials/syncing/git-push) command, like so:
+Once John finishes his feature, he should publish his local commits to the central repository so other team members can access it. He can do this with the [git push](#git-push) command, like so:
 
 ```
 git push origin master
@@ -175,7 +175,7 @@ CONFLICT (content): Merge conflict in <some-file>
 
 ![](centralized-workflow-12.png)
 
-The great thing about Git is that *anyone* can resolve their own merge conflicts. In our example, Mary would simply run a [git status](https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-status) to see where the problem is. Conflicted files will appear in the Unmerged paths section:
+The great thing about Git is that *anyone* can resolve their own merge conflicts. In our example, Mary would simply run a [git status](#git-status) to see where the problem is. Conflicted files will appear in the Unmerged paths section:
 
 ```
 # Unmerged paths:
@@ -185,7 +185,7 @@ The great thing about Git is that *anyone* can resolve their own merge conflicts
 # both modified: <some-file>
 ```
 
-Then, she’ll edit the file(s) to her liking. Once she’s happy with the result, she can stage the file(s) in the usual fashion and let [git rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) do the rest:
+Then, she’ll edit the file(s) to her liking. Once she’s happy with the result, she can stage the file(s) in the usual fashion and let [git rebase](#git-rebase) do the rest:
 
 ```
 git add <some-file>
@@ -214,7 +214,7 @@ git push origin master
 
 As you can see, it’s possible to replicate a traditional Subversion development environment using only a handful of Git commands. This is great for transitioning teams off of SVN, but it doesn’t leverage the distributed nature of Git.
 
-The Centralized Workflow is great for small teams. The conflict resolution process detailed above can form a bottleneck as your team scales in size. If your team is comfortable with the Centralized Workflow but wants to streamline its collaboration efforts, it's definitely worth exploring the benefits of the [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). By dedicating an isolated branch to each feature, it’s possible to initiate in-depth discussions around new additions before integrating them into the official project.
+The Centralized Workflow is great for small teams. The conflict resolution process detailed above can form a bottleneck as your team scales in size. If your team is comfortable with the Centralized Workflow but wants to streamline its collaboration efforts, it's definitely worth exploring the benefits of the [Feature Branch Workflow](#feature-branch-workflow). By dedicating an isolated branch to each feature, it’s possible to initiate in-depth discussions around new additions before integrating them into the official project.
 
 #### Other common workflows
 
@@ -222,15 +222,15 @@ The Centralized Workflow is essentially a building block for other Git workflows
 
 #### Feature branching
 
-Feature Branching is a logical extension of Centralized Workflow. The core idea behind the [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) is that all feature development should take place in a dedicated branch instead of the `master` branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the `master` branch should never contain broken code, which is a huge advantage for continuous integration environments. 
+Feature Branching is a logical extension of Centralized Workflow. The core idea behind the [Feature Branch Workflow](#feature-branch-workflow) is that all feature development should take place in a dedicated branch instead of the `master` branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the `master` branch should never contain broken code, which is a huge advantage for continuous integration environments. 
 
 #### Gitflow Workflow
 
-The [Gitflow Workflow](http://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) was first published in a highly regarded 2010 blog post from [Vincent Driessen at nvie](http://nvie.com/posts/a-successful-git-branching-model/). The Gitflow Workflow defines a strict branching model designed around the project release. This workflow doesn’t add any new concepts or commands beyond what’s required for the Feature Branch Workflow. Instead, it assigns very specific roles to different branches and defines how and when they should interact. 
+The [Gitflow Workflow](#gitflow-workflow) was first published in a highly regarded 2010 blog post from [Vincent Driessen at nvie](http://nvie.com/posts/a-successful-git-branching-model/). The Gitflow Workflow defines a strict branching model designed around the project release. This workflow doesn’t add any new concepts or commands beyond what’s required for the Feature Branch Workflow. Instead, it assigns very specific roles to different branches and defines how and when they should interact. 
 
 #### Forking Workflow
 
-The [Forking Workflow](http://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow) is fundamentally different than the other workflows discussed in this tutorial. Instead of using a single server-side repository to act as the “central” codebase, it gives every developer a server-side repository. This means that each contributor has not one, but two Git repositories: a private local one and a public server-side one. 
+The [Forking Workflow](#forking-workflow) is fundamentally different than the other workflows discussed in this tutorial. Instead of using a single server-side repository to act as the “central” codebase, it gives every developer a server-side repository. This means that each contributor has not one, but two Git repositories: a private local one and a public server-side one. 
 
 #### Guidelines
 
@@ -252,4 +252,4 @@ In this document we discussed Git workflows. We took an in-depth look at a Centr
 - A workflow should be simple and enhance the productivity of your team
 - Your business requirements should help shape your Git workflow
 
-To read about the next Git workflow check out our comprehensive breakdown of the [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow).
+To read about the next Git workflow check out our comprehensive breakdown of the [Feature Branch Workflow](#feature-branch-workflow).

@@ -1,6 +1,6 @@
 ## Git prune
 
-The `git prune` command is an internal housekeeping utility that cleans up unreachable or "orphaned" Git objects. Unreachable objects are those that are inaccessible by any refs. Any commit that cannot be accessed through a branch or tag is considered unreachable. `git prune` is generally not executed directly. Prune is considered a garbage collection command and is a child command of the [git gc](https://www.atlassian.com/git/tutorials/git-gc) command.
+The `git prune` command is an internal housekeeping utility that cleans up unreachable or "orphaned" Git objects. Unreachable objects are those that are inaccessible by any refs. Any commit that cannot be accessed through a branch or tag is considered unreachable. `git prune` is generally not executed directly. Prune is considered a garbage collection command and is a child command of the [git gc](#git-gc) command.
 
 ### Git Prune Overview
 
@@ -44,7 +44,7 @@ Date: Sun Sep 30 09:43:41 2018 -0700
  added hello.txt
 ```
 
-The [git log](https://www.atlassian.com/git/tutorials/git-log) output displays the 2 commits and corresponding commit messages about the edits made to `hello.txt`. The next step is for us to make one of the commits unreachable. We will do this by utilizing the [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) command. We reset the state of the repo to the first commit. the "added hello.txt" commit.
+The [git log](#git-log) output displays the 2 commits and corresponding commit messages about the edits made to `hello.txt`. The next step is for us to make one of the commits unreachable. We will do this by utilizing the [git reset](#git-reset) command. We reset the state of the repo to the first commit. the "added hello.txt" commit.
 
 ```
 ~/git-prune-demo $ git reset --hard 994b122045cf4bf0b97139231b4dd52ea2643c7e
@@ -62,7 +62,7 @@ Date: Sun Sep 30 09:43:41 2018 -0700
  added hello.txt
 ```
 
-The demo repository is now in a state that contains a detached commit. The second commit we made with the message "added another line to hello.txt" is no longer displayed in the `git log` output and is now detached. It may appear as though we have lost or deleted the commit, but Git is very strict about not deleting history. We can confirm it is still available, but detached, by using [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) to visit it directly:
+The demo repository is now in a state that contains a detached commit. The second commit we made with the message "added another line to hello.txt" is no longer displayed in the `git log` output and is now detached. It may appear as though we have lost or deleted the commit, but Git is very strict about not deleting history. We can confirm it is still available, but detached, by using [git checkout](#git-checkout) to visit it directly:
 
 ```
 ~/git-prune-demo $ git checkout 5178becc2ca965e1728554ce1cb8de2f2c2370b1
@@ -117,7 +117,7 @@ When returning to master via `git checkout`, Git is again thoughtful enough to l
 
 This command will most likely return empty output. Empty output implies that the prune will not actually delete anything. Why would this happen? Well, the commit is most likely not fully detached. Somewhere Git is still maintaining a reference to it. This is a prime example of why `git prune` is not to be used stand-alone outside of `git gc`. This is also a good example of how it is hard to fully lose data with Git.
 
-Most likely Git is storing a reference to our detached commit in the reflog. We can investigate by running [git reflog](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog). You should see some output describing the sequence of actions we took to get here. For more info on `git reflog` visit the [git reflog](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog) page. In addition to preserving history in the reflog, Git has internal expiration dates on when it will prune detached commits. Again, these are all implementation details that `git gc` handles and `git prune` should not be used standalone.
+Most likely Git is storing a reference to our detached commit in the reflog. We can investigate by running [git reflog](#git-reflog). You should see some output describing the sequence of actions we took to get here. For more info on `git reflog` visit the [git reflog](#git-reflog) page. In addition to preserving history in the reflog, Git has internal expiration dates on when it will prune detached commits. Again, these are all implementation details that `git gc` handles and `git prune` should not be used standalone.
 
 To conclude our `git prune` simulation demo we must clear the reflog
 

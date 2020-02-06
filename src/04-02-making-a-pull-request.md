@@ -22,7 +22,7 @@ Many of these values will be set to a sensible default by Bitbucket. However, de
 
 ### How it works
 
-Pull requests can be used in conjunction with the [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), or the [Forking Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow). But a pull request requires either two distinct branches or two distinct repositories, so they will not work with the [Centralized Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow). Using pull requests with each of these workflows is slightly different, but the general process is as follows:  
+Pull requests can be used in conjunction with the [Feature Branch Workflow](#feature-branch-workflow), the [Gitflow Workflow](#gitflow-workflow), or the [Forking Workflow](#forking-workflow). But a pull request requires either two distinct branches or two distinct repositories, so they will not work with the [Centralized Workflow](#centralized-workflow). Using pull requests with each of these workflows is slightly different, but the general process is as follows:  
 1. A developer creates the feature in a dedicated branch in their local repo.
 2. The developer pushes the branch to a public Bitbucket repository.
 3. The developer files a pull request via Bitbucket.
@@ -108,7 +108,7 @@ git checkout -b some-feature
 git commit -a -m "Add first draft of some feature"
 ```
 
-Mary can use as many commits as she needs to create the feature. And, if the feature’s history is messier than she would like, she can use an [interactive rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase-i) to remove or squash unnecessary commits. For larger projects, cleaning up a feature’s history makes it much easier for the project maintainer to see what’s going on in the pull request.
+Mary can use as many commits as she needs to create the feature. And, if the feature’s history is messier than she would like, she can use an [interactive rebase](#git-rebase) to remove or squash unnecessary commits. For larger projects, cleaning up a feature’s history makes it much easier for the project maintainer to see what’s going on in the pull request.
 
 #### Mary pushes the feature to her Bitbucket repository
 
@@ -158,4 +158,4 @@ Finally, John accepts the changes, merges the feature branch into master, and cl
 
 ### Where to go from here
 
-You should now have all of the tools you need to start integrating pull requests into your existing workflow. Remember, pull requests are not a replacement for any of the [Git-based collaboration workflows](https://www.atlassian.com/git/tutorials/comparing-workflows), but rather a convenient addition to them that makes collaboration more accessible to all of your team members.
+You should now have all of the tools you need to start integrating pull requests into your existing workflow. Remember, pull requests are not a replacement for any of the [Git-based collaboration workflows](#comparing-workflows), but rather a convenient addition to them that makes collaboration more accessible to all of your team members.

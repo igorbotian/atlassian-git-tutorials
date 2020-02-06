@@ -77,9 +77,9 @@ Maintaining hooks for a team of developers can be a little tricky because the `.
 
 As an alternative, Git also provides a [Template Directory](http://git-scm.com/docs/git-init#_template_directory) mechanism that makes it easier to install hooks automatically. All of the files and directories contained in this template directory are copied into the `.git` directory every time you use `git init` or `git clone`.
 
-All of the [local hooks](https://www.atlassian.com/git/tutorials/git-hooks/local-hooks) described below can be altered—or completely un-installed—by the owner of a repository. It’s entirely up to each team member whether or not they actually use a hook. With this in mind, it’s best to think of Git hooks as a convenient developer tool rather than a strictly enforced development policy.
+All of the [local hooks](#git-hooks) described below can be altered—or completely un-installed—by the owner of a repository. It’s entirely up to each team member whether or not they actually use a hook. With this in mind, it’s best to think of Git hooks as a convenient developer tool rather than a strictly enforced development policy.
 
-That said, it is possible to reject commits that do not conform to some standard using [server-side hooks](https://www.atlassian.com/git/tutorials/git-hooks/server-side-hooks). We’ll talk more about this later in the article.
+That said, it is possible to reject commits that do not conform to some standard using [server-side hooks](#git-hooks). We’ll talk more about this later in the article.
 
 ### Local Hooks
 

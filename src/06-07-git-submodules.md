@@ -61,7 +61,7 @@ There are now two new files in the repository `.gitmodules` and the `awesomelibr
 	url = https://bitbucket.org/jaredw/awesomelibrary
 ```
 
-These files can now be committed to the original repository by using [git add](https://www.atlassian.com/git/tutorials/saving-changes) and [git commit](https://www.atlassian.com/git/tutorials/saving-changes/git-commit).
+These files can now be committed to the original repository by using [git add](#saving-changes) and [git commit](#git-commit).
 
 ```
 $ git add .gitmodules awesomelibrary/
@@ -74,7 +74,7 @@ $ git commit -m "added submodule"
 
 #### Cloning git submodules
 
-When a project with submodules is cloned using [git clone](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone), it creates the directories that contain submodules, but none of the files within them. The submodule files are not created until two additional commands are run. `git submodule init` will update the local `.git/config` with the mapping from the `.gitmodules` file. `git submodule update` will then fetch all the data from the submodule project and check out the mapped commit in the parent project.
+When a project with submodules is cloned using [git clone](#git-clone), it creates the directories that contain submodules, but none of the files within them. The submodule files are not created until two additional commands are run. `git submodule init` will update the local `.git/config` with the mapping from the `.gitmodules` file. `git submodule update` will then fetch all the data from the submodule project and check out the mapped commit in the parent project.
 
 There is a `-recursive` option that can be passed to git clone this a convenience parameter that will tell `git clone` to also initialize and update any submodules. Using the `-recursive` option is equivalent to executing:
 

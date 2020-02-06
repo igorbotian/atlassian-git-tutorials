@@ -1,6 +1,6 @@
 ### git push
 
-The `git push` command is used to upload local repository content to a remote repository. Pushing is how you transfer commits from your local repository to a remote repo. It's the counterpart to [git fetch](https://www.atlassian.com/git/tutorials/syncing/git-fetch), but whereas fetching imports commits to local branches, pushing exports commits to remote branches. Remote branches are configured using the [git remote](https://www.atlassian.com/git/tutorials/syncing) command. Pushing has the potential to overwrite changes, caution should be taken when pushing. These issues are discussed below.
+The `git push` command is used to upload local repository content to a remote repository. Pushing is how you transfer commits from your local repository to a remote repo. It's the counterpart to [git fetch](#git-fetch), but whereas fetching imports commits to local branches, pushing exports commits to remote branches. Remote branches are configured using the [git remote](#syncing) command. Pushing has the potential to overwrite changes, caution should be taken when pushing. These issues are discussed below.
 
 #### Git push usage
 
@@ -40,11 +40,11 @@ The above diagram shows what happens when your local master has progressed past 
 
 #### Git push and syncing
 
-`git push` is one component of many used in the overall Git "syncing" process. The syncing commands operate on remote branches which are configured using the [git remote](https://www.atlassian.com/git/tutorials/syncing) command. `git push` can be considered and 'upload' command whereas, [git fetch](https://www.atlassian.com/git/tutorials/syncing/git-fetch) and [git pull](https://www.atlassian.com/git/tutorials/syncing/git-pull) can be thought of as 'download' commands. Once changesets have been moved via a download or upload a [git merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge) may be performed at the destination to integrate the changes.
+`git push` is one component of many used in the overall Git "syncing" process. The syncing commands operate on remote branches which are configured using the [git remote](#syncing) command. `git push` can be considered and 'upload' command whereas, [git fetch](#git-fetch) and [git pull](#git-pull) can be thought of as 'download' commands. Once changesets have been moved via a download or upload a [git merge](#git-merge) may be performed at the destination to integrate the changes.
 
 #### Pushing to bare repositories
 
-A frequently used, modern Git practice is to have a remotely hosted `--bare` repository act as a central origin repository. This origin repository is often hosted off-site with a trusted 3rd party like Bitbucket. Since pushing messes with the remote branch structure, It is safest and most common to push to repositories that have been created with the `--bare` flag. Bare repos don’t have a working directory so a push will not alter any in progress working directory content. For more information on bare repository creation, read about [git init](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init).
+A frequently used, modern Git practice is to have a remotely hosted `--bare` repository act as a central origin repository. This origin repository is often hosted off-site with a trusted 3rd party like Bitbucket. Since pushing messes with the remote branch structure, It is safest and most common to push to repositories that have been created with the `--bare` flag. Bare repos don’t have a working directory so a push will not alter any in progress working directory content. For more information on bare repository creation, read about [git init](#git-init).
 
 #### Force Pushing
 

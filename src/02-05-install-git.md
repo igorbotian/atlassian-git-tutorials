@@ -24,7 +24,7 @@ The easiest way to install Git on a Mac is via the stand-alone installer:
 `$ git config --global user.name "Emma Paris"`  
 `$ git config --global user.email "eparis@atlassian.com"`  
 
-5. (Optional) To make Git remember your username and password when working with HTTPS repositories, [configure the git-credential-osxkeychain helper](https://www.atlassian.com/git/tutorials/install-git#install-the-git-credential-osx).
+5. (Optional) To make Git remember your username and password when working with HTTPS repositories, [configure the git-credential-osxkeychain helper](#install-git).
 
 #### Install Git with Homebrew
 
@@ -41,7 +41,7 @@ If you have [installed Homebrew](http://brew.sh/) to manage packages on OS X, yo
 `$ git config --global user.name "Emma Paris"`  
 `$ git config --global user.email "eparis@atlassian.com"`  
 
-5. (Optional) To make Git remember your username and password when working with HTTPS repositories, install the [git-credential-osxkeychain helper](https://www.atlassian.com/git/tutorials/install-git#install-the-git-credential-osx).
+5. (Optional) To make Git remember your username and password when working with HTTPS repositories, install the [git-credential-osxkeychain helper](#install-git).
 
 #### Install Git with MacPorts
 
@@ -61,7 +61,7 @@ If you have [installed MacPorts](https://www.macports.org/install.php) to manage
 `$ git config --global user.name "Emma Paris"`  
 `$ git config --global user.email "eparis@atlassian.com"`  
 
-5. (Optional) To make Git remember your username and password when working with HTTPS repositories, configure the [git-credential-osxkeychain helper](https://www.atlassian.com/git/tutorials/install-git#install-the-git-credential-osx).
+5. (Optional) To make Git remember your username and password when working with HTTPS repositories, configure the [git-credential-osxkeychain helper](#install-git).
 
 #### Install the git-credential-osxkeychain helper
 

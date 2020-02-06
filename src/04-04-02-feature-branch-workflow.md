@@ -4,7 +4,7 @@ The core idea behind the Feature Branch Workflow is that all feature development
 
 Encapsulating feature development also makes it possible to leverage pull requests, which are a way to initiate discussions around a branch. They give other developers the opportunity to sign off on a feature before it gets integrated into the official project. Or, if you get stuck in the middle of a feature, you can open a pull request asking for suggestions from your colleagues. The point is, pull requests make it incredibly easy for your team to comment on each other’s work.
 
-The Git Feature Branch Workflow is a composable workflow that can be leveraged by other high-level Git workflows. We discussed other Git workflows on the [Git workflow overview page](http://www.atlassian.com/git/tutorials/comparing-workflows/). Git Feature Branch Workflow is branching model focused, meaning that it is a guiding framework for managing and creating branches. Other workflows are more repo focused. The Git Feature Branch Workflow can be incorporated into other workflows. The [Gitflow](http://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), and Git Forking Workflows traditionally use a [Git Feature Branch Workflow](http://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow) in regards to their branching models.
+The Git Feature Branch Workflow is a composable workflow that can be leveraged by other high-level Git workflows. We discussed other Git workflows on the [Git workflow overview page](#comparing-workflows/). Git Feature Branch Workflow is branching model focused, meaning that it is a guiding framework for managing and creating branches. Other workflows are more repo focused. The Git Feature Branch Workflow can be incorporated into other workflows. The [Gitflow](#gitflow-workflow), and Git Forking Workflows traditionally use a [Git Feature Branch Workflow](#forking-workflow) in regards to their branching models.
 
 #### How it works
 
@@ -68,7 +68,7 @@ Aside from isolating feature development, branches make it possible to discuss c
 
 Code review is a major benefit of pull requests, but they’re actually designed to be a generic way to talk about code. You can think of pull requests as a discussion dedicated to a particular branch. This means that they can also be used much earlier in the development process. For example, if a developer needs help with a particular feature, all they have to do is file a pull request. Interested parties will be notified automatically, and they’ll be able to see the question right next to the relevant commits.
 
-Once a pull request is accepted, the actual act of publishing a feature is much the same as in the [Centralized Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows). First, you need to make sure your local `master` is synchronized with the upstream `master`. Then, you merge the feature branch into master and push the updated `master` back to the central repository.
+Once a pull request is accepted, the actual act of publishing a feature is much the same as in the [Centralized Workflow](#comparing-workflows). First, you need to make sure your local `master` is synchronized with the upstream `master`. Then, you merge the feature branch into master and push the updated `master` back to the central repository.
 
 Pull requests can be facilitated by product repository management solutions like Bitbucket Cloud or Bitbucket Server. View the Bitbucket Server pull requests documentation for an example.
 
@@ -160,6 +160,6 @@ In this document, we discussed the Git Feature Branch Workflow. This workflow he
 - can be leveraged by other repo oriented workflows
 - promotes collaboration with team members through pull requests and merge reviews
 
-Utilizing [git rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase) during the review and merge stages of a feature branch will create enforce a cohesive Git history of feature merges. A feature branching model is a great tool to promote collaboration within a team environment.
+Utilizing [git rebase](#git-rebase) during the review and merge stages of a feature branch will create enforce a cohesive Git history of feature merges. A feature branching model is a great tool to promote collaboration within a team environment.
 
-Go one click deeper into Git workflows by reading our comprehensive tutorial of the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+Go one click deeper into Git workflows by reading our comprehensive tutorial of the [Gitflow Workflow](#gitflow-workflow).
