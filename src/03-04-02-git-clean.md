@@ -1,4 +1,4 @@
-## git clean
+### git clean
 
 In this section, we will focus on a detailed discussion of the `git clean` command. `git clean` is to some extent an 'undo' command. `git clean` can be considered complementary to other commands like [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) and [git checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout). Whereas these other commands operate on files previously added to the Git tracking index, the `git clean` command operates on untracked files. Untracked files are files that have been created within your repo's working directory but have not yet been added to the repository's tracking index using the [git add](https://www.atlassian.com/git/tutorials/saving-changes) command. To better demonstrate the difference between tracked and untracked files consider the following command line example:
 
@@ -31,7 +31,7 @@ $ git clean fatal: clean.requireForce defaults to true and neither -i, -n, nor -
 
 At this point, executing the default `git clean` command may produce a fatal error. The example above demonstrates what this may look like. By default, Git is globally configured to require that git clean be passed a "force" option to initiate. This is an important safety mechanism. When finally executed `git clean` is not undo-able. When fully executed, git clean will make a hard filesystem deletion, similar to executing the command line rm utility. Make sure you really want to delete the untracked files before you run it.
 
-### Common options and usage
+#### Common options and usage
 
 Given the previous explanation of the default `git clean` behaviors and caveats, the following content demonstrates various `git clean` use cases and the accompanying command line options required for their operation.
 
@@ -87,7 +87,7 @@ git clean -xf
 
 Like the `-d` option `-x` can be passed and composed with other options. This example demonstrates a combination with `-f` that will remove untracked files from the current directory as well as any files that Git usually ignores.
 
-### Interactive mode or git clean interactive
+#### Interactive mode or git clean interactive
 
 In addition to the ad-hoc command line execution we have demonstrated so far, `git clean` has an "interactive" mode that you can initiate by passing the `-i` option. Let us revisit the example repo from the introduction of this document. In that initial state, we will start an interactive clean session.
 
@@ -180,6 +180,6 @@ Would remove the following item:
  1: clean 2: filter by pattern 3: select by numbers 4: ask each 5: quit 6: help
 ```
 
-### Summary
+#### Summary
 
 To recap, `git clean` is a convenience method for deleting untracked files in a repo's working directory. Untracked files are those that are in the repo's directory but have not yet been added to the repo's index with [git add](https://www.atlassian.com/git/tutorials/saving-changes). Overall the effect of `git clean` can be accomplished using [git status](https://www.atlassian.com/git/tutorials/inspecting-a-repository) and the operating systems native deletion tools. `git clean` can be used alongside [git reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset) to fully undo any additions and commits in a repository.

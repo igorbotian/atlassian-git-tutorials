@@ -1,4 +1,4 @@
-## git stash
+### git stash
 
 `git stash` temporarily shelves (or *stashes*) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on. Stashing is handy if you need to quickly switch context and work on something else, but you're mid-way through a code change and aren't quite ready to commit.
 - Git Stash  
@@ -12,7 +12,7 @@
     - [Cleaning up your stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash#cleaning-up-your-stash)  
     - [How git stash works](https://www.atlassian.com/git/tutorials/saving-changes/git-stash#how-git-stash-works)  
 
-### Stashing your work
+#### Stashing your work
 
 The `git stash` command takes your uncommitted changes (both staged and unstaged), saves them away for later use, and then reverts them from your working copy. For example:
 
@@ -40,7 +40,7 @@ At this point you're free to make changes, create new commits, switch branches, 
 
 Note that the stash is local to your Git repository; stashes are not transferred to the server when you push.
 
-### Re-applying your stashed changes
+#### Re-applying your stashed changes
 
 You can reapply previously stashed changes with `git stash pop`:
 
@@ -81,7 +81,7 @@ This is useful if you want to apply the same stashed changes to multiple branche
 
 Now that you know the basics of stashing, there is one caveat with `git stash` you need to be aware of: by default Git *won't* stash changes made to untracked or ignored files.
 
-### Stashing untracked or ignored files
+#### Stashing untracked or ignored files
 
 By default, running `git stash` will stash:    
 - changes that have been added to your index (staged changes)  
@@ -151,7 +151,7 @@ You can include changes to [ignored](https://www.atlassian.com/git/tutorials/git
 
 ![](git-stash-01.png)
 
-### Managing multiple stashes
+#### Managing multiple stashes
 
 You aren't limited to a single stash. You can run git stash several times to create multiple stashes, and then use `git stash list` to view them. By default, stashes are identified simply as a "WIP" – work in progress – on top of the branch and commit that you created the stash from. After a while it can be difficult to remember what each stash contains:
 
@@ -183,7 +183,7 @@ You can choose which stash to re-apply by passing its identifier as the last arg
 $ git stash pop stash@{2}
 ```
 
-### Viewing stash diffs
+#### Viewing stash diffs
 
 You can view a summary of a stash with `git stash show`:
 
@@ -215,7 +215,7 @@ index 9daeafb..ebdcbd2 100644
 +<link rel="stylesheet" href="style.css"/>
 ```
 
-### Partial stashes
+#### Partial stashes
 
 You can also choose to stash just a single file, a collection of files, or individual changes from within files. If you pass the `-p` option (or `--patch`) to git stash, it will iterate through each changed "hunk" in your working copy and ask whether you wish to stash it:
 
@@ -255,7 +255,7 @@ You can hit **?** for a full list of hunk commands. Commonly useful ones are:
 
 There is no explicit "abort" command, but hitting `CTRL-C (SIGINT)` will abort the stash process.
 
-### Creating a branch from your stash
+#### Creating a branch from your stash
 
 If the changes on your branch diverge from the changes in your stash, you may run into conflicts when popping or applying your stash. Instead, you can use git stash branch to create a new branch to apply your stashed changes to:
 
@@ -276,7 +276,7 @@ Dropped refs/stash@{1} (32b3aa1d185dfe6d57b3c3cc3b32cbf3e380cc6a)
 
 This checks out a new branch based on the commit that you created your stash from, and then pops your stashed changes onto it.
 
-### Cleaning up your stash
+#### Cleaning up your stash
 
 If you decide you no longer need a particular stash, you can delete it with `git stash drop`:
 
@@ -291,7 +291,7 @@ Or you can delete all of your stashes with:
 $ git stash clear
 ```
 
-### How git stash works
+#### How git stash works
 
 If you just wanted to know how to use `git stash`, you can stop reading here. But if you're curious about how Git (and `git stash`) works under the hood, read on!
 

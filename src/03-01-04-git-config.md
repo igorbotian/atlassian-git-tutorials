@@ -1,8 +1,8 @@
-## git config
+### git config
 
 n this document, we'll take an in-depth look at the `git config` command. We briefly discussed git config usage on our [Setting up a Repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository) page. The `git config` command is a convenience function that is used to set Git configuration values on a global or local project level. These configuration levels correspond to `.gitconfig` text files. Executing `git config` will modify a configuration text file. We'll be covering common configuration settings like email, username, and editor. We'll discuss Git aliases, which allow you to create shortcuts for frequently used Git operations. Becoming familiar with git config and the various Git configuration settings will help you create a powerful, customized Git workflow.
 
-### Usage
+#### Usage
 
 The most basic use case for `git config` is to invoke it with a configuration name, which will display the set value at that name. Configuration names are dot delimited strings composed of a 'section' and a 'key' based on their hierarchy. For example: `user.email`
 
@@ -12,7 +12,7 @@ git config user.email
 
 In this example, email is a child property of the user configuration block. This will return the configured email address, if any, that Git will associate with locally created commits.
 
-#### git config levels and files
+##### git config levels and files
 
 Before we further discuss git config usage, let's take a moment to cover configuration levels. The `git config` command can accept arguments to specify which configuration level to operate on. The following configuration levels are available:
 
@@ -29,7 +29,7 @@ System-level configuration is applied across an entire machine. This covers all 
 
 Thus the order of priority for configuration levels is: local, global, system. This means when looking for a configuration value, Git will start at the local level and bubble up to the system level.
 
-#### Writing a value
+##### Writing a value
 
 Expanding on what we already know about `git config`, let's look at an example in which we write a value:
 
@@ -39,7 +39,7 @@ git config --global user.email "your_email@example.com"
 
 This example writes the value `your_email@example.com` to the configuration name `user.email`. It uses the `--global` flag so this value is set for the current operating system user.
 
-### git config editor - core.editor
+#### git config editor - core.editor
 
 Many Git commands will launch a text editor to prompt for further input. One of the most common use cases for `git config` is configuring which editor Git should use. Listed below is a table of popular editors and matching git config commands:
 
@@ -54,7 +54,7 @@ Many Git commands will launch a text editor to prompt for further input. One of 
 | Sublime Text (Win, 64-bit install) | git config --global core.editor "'c:/program files/sublime text 3/sublimetext.exe' -w"       |
 | Textmate	                         | git config --global core.editor "mate -w"                                                    |
 
-### Merge tools
+#### Merge tools
 
 In the event of a merge conflict, Git will launch a "merge tool." By default, Git uses an internal implementation of the common Unix diff program. The internal Git diff is a minimal merge conflict viewer. There are many external third party merge conflict resolutions that can be used instead. For an overview of various merge tools and configuration, see our guide on [tips and tools to resolve conflits with Git](https://developer.atlassian.com/blog/2015/12/tips-tools-to-solve-git-conflicts/). 
 
@@ -62,11 +62,11 @@ In the event of a merge conflict, Git will launch a "merge tool." By default, Gi
 git config --global merge.tool kdiff3
 ```
 
-### Colored outputs
+#### Colored outputs
 
 Git supports colored terminal output which helps with rapidly reading Git output. You can customize your Git output to use a personalized color theme. The git config command is used to set these color values.
 
-#### color.ui
+##### color.ui
 
 This is the master variable for Git colors. Setting it to false will disable all Git's colored terminal output.
 
@@ -78,7 +78,7 @@ By default, `color.ui` is set to auto which will apply colors to the immediate t
 
 You can set the `color.ui` value to always which will also apply color code output when redirecting the output stream to files or pipes. This can unintentionally cause problems since the receiving pipe may not be expecting color-coded input.
 
-#### Git color values
+##### Git color values
 
 In addition to `color.ui`, there are many other granular color settings. Like `color.ui`, these color settings can all be set to false, auto, or always. These color settings can also have a specific color value set. Some examples of supported color values are:  
 - normal  
@@ -93,7 +93,7 @@ In addition to `color.ui`, there are many other granular color settings. Like `c
 
 Colors may also be specified as hexadecimal color codes like #ff0000, or ANSI 256 color values if your terminal supports it.
 
-#### Git color configuration settings
+##### Git color configuration settings
 
 1. `color.branch`   
 Configures the output color of the Git branch command 
@@ -163,7 +163,7 @@ Used to specify custom color for specified git status elements. `<slot>` support
     - *nobranch*: the color the "no branch" warning is shown in  
     - *unmerged*: colors files which have unmerged changes  
 
-### Aliases
+#### Aliases
 
 You may be familiar with the concept of aliases from your operating system command-line; if not, they're custom shortcuts that define which command will expand to longer or combined commands. Aliases save you the time and energy cost of typing frequently used commands. Git provides its own alias system. A common use case for Git aliases is shortening the commit command. Git aliases are stored in Git configuration files. This means you can use the git config command to configure aliases.
 
@@ -179,7 +179,7 @@ git config --global alias.amend ci --amend
 
 This example creates an alias amend which composes the `ci` alias into a new alias that uses `--amend` flag.
 
-### Formatting & whitespace
+#### Formatting & whitespace
 
 Git has several "whitespace" features that can be configured to highlight whitespace issues when using git diff. The whitespace issues will be highlighted using the configured color `color.diff.whitespace`
 
@@ -195,7 +195,7 @@ The following features are disabled by default
 - _cr-at-eol_ highlights a carriage-return at the line endings  
 - _tabwidth=\<n>_ defines how many character positions a tab occupies. The default value is 8. Allowed values are 1-63  
 
-### Summary
+#### Summary
 
 In this article, we covered the use of the git config command. We discussed how the command is a convince method for editing raw git config files on the filesystem. We looked at basic read and write operations for configuration options. We took a look at common config patterns:  
 - How to configure the Git editor  

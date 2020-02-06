@@ -11,14 +11,14 @@ The high level points this guide will cover are:
 
 By the end of this module, you should be able to create a Git repo, use common Git commands, commit a modified file, view your project’s history and configure a connection to a Git hosting service (Bitbucket).
 
-### What is a Git repository?
+#### What is a Git repository?
 A [Git repository](http://bitbucket.org/code-repository) is a virtual storage of your project. It allows you to save versions of your code, which you can access when needed. 
 
-### Initializing a new repository: git init
+#### Initializing a new repository: git init
 
 To create a new repo, you'll use the `git init` command. `git init` is a one-time command you use during the initial setup of a new repo. Executing this command will create a new .git subdirectory in your current working directory. This will also create a new master branch. 
 
-#### Versioning an existing project with a new git repository
+##### Versioning an existing project with a new git repository
 
 This example assumes you already have an existing project folder that you would like to create a repo within. You'll first cd to the root project folder and then execute the git init command.
 
@@ -35,7 +35,7 @@ git init <project directory>
 
 Visit the [git init](http://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init) page for a more detailed resource on `git init`.
 
-### Cloning an existing repository: git clone
+#### Cloning an existing repository: git clone
 
 If a project has already been set up in a central repository, the clone command is the most common way for users to obtain a local development clone. Like git init, cloning is generally a one-time operation. Once a developer has obtained a working copy, all [version control](http://bitbucket.org/version-control-software) operations are managed through their local repository.
 
@@ -58,7 +58,7 @@ When executed, the latest version of the remote repo files on the master branch 
 
 For more documentation on git clone usage and supported Git URL formats, visit the git [clone Page](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone).
 
-### Saving changes to the repository: git add and git commit
+#### Saving changes to the repository: git add and git commit
 
 Now that you have a repository cloned or initialized, you can commit file version changes to it. The following example assumes you have set up a project at `/path/to/project`. The steps being taken in this example are:  
 - Change directories to `/path/to/project`  
@@ -77,7 +77,7 @@ After executing this example, your repo will now have `CommitTest.txt` added to 
 
 This example introduced two additional git commands: `add` and `commit`. This was a very limited example, but both commands are covered more in depth on the [git add](https://www.atlassian.com/git/tutorials/saving-changes) and [git commit](https://www.atlassian.com/git/tutorials/saving-changes#git-commit) pages. Another common use case for `git add` is the `--all` option. Executing git add --all will take any changed and untracked files in the repo and add them to the repo and update the repo's working tree.
 
-### Repo-to-repo collaboration: git push
+#### Repo-to-repo collaboration: git push
 
 It’s important to understand that Git’s idea of a “working copy” is very different from the working copy you get by checking out source code from an SVN repository. Unlike SVN, Git makes no distinction between the working copies and the central repository—they're all full-fledged [Git repositories](http://bitbucket.org/code-repository).
 
@@ -85,7 +85,7 @@ This makes collaborating with Git fundamentally different than with SVN. Whereas
 
 Of course, there’s nothing stopping you from giving certain Git repos special meaning. For example, by simply designating one Git repo as the “central” repository, it’s possible to replicate a centralized workflow using Git. This is accomplished through conventions rather than being hardwired into the VCS itself.
 
-#### Bare vs. cloned repositories
+##### Bare vs. cloned repositories
 
 If you used `git clone` in the previous "Initializing a new Repository" section to set up your local repository, your repository is already configured for remote collaboration. git clone will automatically configure your repo with a remote pointed to the Git URL you cloned it from. This means that once you make changes to a file and commit them, you can git push those changes to the remote repository.
 
@@ -93,7 +93,7 @@ If you used `git init` to make a fresh repo, you'll have no remote repo to push 
 
 If you prefer to host your own remote repo, you'll need to set up a "Bare Repository." Both `git init` and `git clone` accept a `--bare` argument. The most common use case for bare repo is to create a remote central Git repository
 
-### Configuration & set up: git config
+#### Configuration & set up: git config
 
 Once you have a remote repo setup, you will need to add a remote repo url to your local `git config`, and set an upstream branch for your local branches. The `git remote` command offers such utility.
 
@@ -158,7 +158,7 @@ git config --global --edit
 
 Open the global configuration file in a text editor for manual editing. An in-depth guide on how to configure a text editor for git to use can be found on the [Git config page](http://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config).
 
-#### Discussion
+##### Discussion
 
 All configuration options are stored in plaintext files, so the `git config` command is really just a convenient command-line interface. Typically, you’ll only need to configure a Git installation the first time you start working on a new development machine, and for virtually all cases, you'll want to use the `--global` flag. One important exception is to override the author email address. You may wish to set your personal email address for personal and open source repositories, and your professional email address for work-related repositories.
 
@@ -175,7 +175,7 @@ When options in these files conflict, local settings override user settings, whi
 
 You can manually edit these values to the exact same effect as `git config`.
 
-#### Example
+##### Example
 
 The first thing you’ll want to do after installing Git is tell it your name/email and customize some of the default settings. A typical initial configuration might look something like the following:
 
@@ -203,7 +203,7 @@ git config --global alias.ci commit
 
 This will produce the `~/.gitconfig` file from the previous section. Take a more in-depth look at git config on the [git config page](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config).
 
-### Summary
+#### Summary
 
 Here we demonstarted how to create a git repository using two methods: [git init](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init) and [git clone](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone). This guide can be applied to manage software source code or other content that needs to be versioned. [Git add](https://www.atlassian.com/git/tutorials/saving-changes), [git commit](https://www.atlassian.com/git/tutorials/saving-changes#git-commit), [git push](https://www.atlassian.com/git/tutorials/syncing#git-push), and [git remote](https://www.atlassian.com/git/tutorials/syncing#git-remote) were also introduced and utilized at a high level. 
 

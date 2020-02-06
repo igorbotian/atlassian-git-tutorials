@@ -1,10 +1,10 @@
-## git rebase
+### git rebase
 
 This document will serve as an in-depth discussion of the `git rebase` command. The Rebase command has also been looked at on the [setting up a repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository) and [rewriting history](https://www.atlassian.com/git/tutorials/rewriting-history) pages. This page will take a more detailed look at `git rebase` configuration and execution. Common Rebase use cases and pitfalls will be covered here.
 
 Rebase is one of two Git utilities that specializes in integrating changes from one branch onto another. The other change integration utility is `git merge`. Merge is always a forward moving change record. Alternatively, rebase has powerful history rewriting features. For a detailed look at Merge vs. Rebase, visit our [Merging vs Rebasing guide](https://www.atlassian.com/git/tutorials/merging-vs-rebasing). Rebase itself has 2 main modes: "manual" and "interactive" mode. We will cover the different Rebase modes in more detail below.
 
-### What is git rebase?
+#### What is git rebase?
 
 Rebasing is the process of moving or combining a sequence of commits to a new base commit. Rebasing is most useful and easily visualized in the context of a feature branching workflow. The general process can be visualized as the following:
 
@@ -12,7 +12,7 @@ Rebasing is the process of moving or combining a sequence of commits to a new ba
 
 From a content perspective, rebasing is changing the base of your branch from one commit to another making it appear as if you'd created your branch from a different commit. Internally, Git accomplishes this by creating new commits and applying them to the specified base. It's very important to understand that even though the branch looks the same, it's composed of entirely new commits.
 
-### Usage
+#### Usage
 
 The primary reason for rebasing is to maintain a linear project history. For example, consider a situation where the master branch has progressed since you started working on a feature branch. You want to get the latest updates to the master branch in your feature branch, but you want to keep your branch's history clean so it appears as if you've been working off the latest master branch. This gives the later benefit of a clean merge of your feature branch back into the master branch. Why do we want to maintain a "clean history"? The benefits of having a clean history become tangible when performing Git operations to investigate the introduction of a regression. A more real-world scenario would be:  
 1. A bug is identified in the master branch. A feature that was working successfully is now broken.
@@ -28,11 +28,11 @@ You have two options for integrating your feature into the master branch: mergin
 
 Rebasing is a common way to integrate upstream changes into your local repository. Pulling in upstream changes with Git merge results in a superfluous merge commit every time you want to see how the project has progressed. On the other hand, rebasing is like saying, “I want to base my changes on what everybody has already done.”
 
-#### Don't rebase public history
+##### Don't rebase public history
 
 As we've discussed previously in [rewriting history](https://www.atlassian.com/git/tutorials/rewriting-history), you should never rebase commits once they've been pushed to a public repository. The rebase would replace the old commits with new ones and it would look like that part of your project history abruptly vanished.
 
-#### Git Rebase Standard vs Git Rebase Interactive
+##### Git Rebase Standard vs Git Rebase Interactive
 
 Git rebase interactive is when `git rebase` accepts an `-i` argument. This stands for "Interactive." Without any arguments, the command runs in standard mode. In both cases, let's assume we have created a separate feature branch.
 
@@ -63,26 +63,26 @@ This rebases the current branch onto `<base>` but uses an interactive rebasing s
 pick 2231360 some old commit
 pick ee2adc2 Adds new feature
 
-# Rebase 2cf755d..ee2adc2 onto 2cf755d (9 commands)
-#
-# Commands:
-# p, pick = use commit
-# r, reword = use commit, but edit the commit message
-# e, edit = use commit, but stop for amending
-# s, squash = use commit, but meld into previous commit
-# f, fixup = like "squash", but discard this commit's log message
-# x, exec = run command (the rest of the line) using shell
-# d, drop = remove commit
+Rebase 2cf755d..ee2adc2 onto 2cf755d (9 commands)
+
+Commands:
+ p, pick = use commit
+ r, reword = use commit, but edit the commit message
+ e, edit = use commit, but stop for amending
+ s, squash = use commit, but meld into previous commit
+ f, fixup = like "squash", but discard this commit's log message
+ x, exec = run command (the rest of the line) using shell
+ d, drop = remove commit
 ```
 
-#### Additional rebase commands
+##### Additional rebase commands
 
 As detailed in the [rewriting history](https://www.atlassian.com/git/tutorials/rewriting-history) page, rebasing can be used to change older and multiple commits, committed files, and multiple messages. While these are the most common applications, `git rebase` also has additional command options that can be useful in more complex applications.  
 - `git rebase -d` means during playback the commit will be discarded from the final combined commit block.  
 - `git rebase -p` leaves the commit as is. It will not modify the commit's message or content and will still be an individual commit in the branches history.  
 - `git rebase -x` during playback executes a command line shell script on each marked commit. A useful example would be to run your codebase's test suite on specific commits, which may help identify regressions during a rebase.  
 
-#### Recap
+##### Recap
 
 Interactive rebasing gives you complete control over what your project history looks like. This affords a lot of freedom to developers, as it lets them commit a "messy" history while they're focused on writing code, then go back and clean it up after the fact.
 
@@ -90,7 +90,7 @@ Most developers like to use an interactive rebase to polish a feature branch bef
 
 The real power of interactive rebasing can be seen in the history of the resulting master branch. To everybody else, it looks like you're a brilliant developer who implemented the new feature with the perfect amount of commits the first time around. This is how interactive rebasing can keep a project's history clean and meaningful.
 
-#### Configuration options
+##### Configuration options
 
 There are a few rebase properties that can be set using `git config`. These options will alter the git rebase output look and feel.  
 - `rebase.stat`: A boolean that is set to false by default. The option toggles display of visual diffstat content that shows what changed since the last debase.  
@@ -105,7 +105,7 @@ There are a few rebase properties that can be set using `git config`. These opti
 
 - `rebase.instructionFormat`: A `git log` format string that will be used for formatting interactive rebase display  
 
-#### Advanced rebase application
+##### Advanced rebase application
 
 The command line argument `--onto` can be passed to `git rebase`. When in `git rebase --onto` mode the command expands to:
 
@@ -140,7 +140,7 @@ Let’s say we have an example repo with branches like:
       o---o---o---o---o featureA
 ``` 
 
-### Understanding the dangers of rebase
+#### Understanding the dangers of rebase
 
 One caveat to consider when working with `git rebase` is merge conflicts may become more frequent during a rebase workflow. This occurs if you have a long-lived branch that has strayed from `master`. Eventually you will want to rebase against `master` and at that time it may contain many new commits that your branch changes may conflict with. This is easily remedied by rebasing your branch frequently against `master`, and making more frequent commits. The `--continue` and `--abort` command line arguments can be passed to `git rebase` to advance or reset the the `rebase` when dealing with conflicts.
 
@@ -148,11 +148,11 @@ A more serious `rebase` caveat is lost commits from interactive history rewritin
 
 `git rebase` itself is not seriously dangerous. The real danger cases arise when executing history rewriting interactive rebases and force pushing the results to a remote branch that's shared by other users. This is a pattern that should be avoided as it has the capability to overwrite other remote users' work when they pull.
 
-### Recovering from upstream rebase
+#### Recovering from upstream rebase
 
 If another user has rebased and force pushed to the branch that you’re committing to, a `git pull` will then overwrite any commits you have based off that previous branch with the tip that was force pushed. Luckily, using `git reflog` you can get the reflog of the remote branch. On the remote branch's reflog you can find a ref before it was rebased. You can then rebase your branch against that remote ref using the `--onto` option as discussed above in the Advanced Rebase Application section.
 
-### Summary
+#### Summary
 
 In this article we covered `git rebase` usage. We discussed basic and advanced use cases and more advanced examples. Some key discussion points are:  
 - git rebase standard vs interactive modes  

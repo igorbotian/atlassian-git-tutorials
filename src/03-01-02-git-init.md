@@ -1,4 +1,4 @@
-## git init
+### git init
 
 This page will explore the `git init` command in depth. By the end of this page you will be informed on the core functionality and extended feature set of `git init`. This exploration includes:  
 - `git init` options and usage  
@@ -16,7 +16,7 @@ Aside from the `.git` directory, in the root directory of the project, an existi
 
 By default, `git init` will initialize the Git configuration to the `.git` subdirectory path. The subdirectory path can be modified and customized if you would like it to live elsewhere. You can set the `$GIT_DIR` environment variable to a custom path and `git init` will initialize the Git configuration files there. Additionally you can pass the `--separate-git-dir` argument for the same result. A common use case for a separate `.git` subdirectory is to keep your system configuration "dotfiles" (`.bashrc`, `.vimrc`, etc.) in the home directory while keeping the `.git` folder elsewhere.
  
-### Usage
+#### Usage
 
 Compared to SVN, the `git init` command is an incredibly easy way to create new version-controlled projects. Git doesn’t require you to create a repository, import files, and check out a working copy. Additionally, Git does not require any pre-existing server or admin privileges. All you have to do is cd into your project subdirectory and run `git init`, and you'll have a fully functional Git repository.
 
@@ -34,11 +34,11 @@ Create an empty Git repository in the specified directory. Running this command 
 
 If you've already run `git init` on a project directory and it contains a `.git` subdirectory, you can safely run `git init` again on the same project directory. It will not override an existing `.git` configuration.
 
-#### git init vs. git clone
+##### git init vs. git clone
 
 A quick note: `git init` and `git clone` can be easily confused. At a high level, they can both be used to "initialize a new git repository." However, `git clone` is dependent on `git init`. `git clone` is used to create a copy of an existing repository. Internally, `git clone` first calls `git init` to create a new repository. It then copies the data from the existing repository, and checks out a new set of working files. Learn more on the [git clone page](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone).
 
-### Bare repositories --- git init --bare
+#### Bare repositories --- git init --bare
 
 ```
 git init --bare <directory>
@@ -58,7 +58,7 @@ ssh <user>@<host> cd path/above/repo git init --bare my-project.git
 
 First, you SSH into the server that will contain your central repository. Then, you navigate to wherever you’d like to store the project. Finally, you use the `--bare` flag to create a central storage repository. Developers would then clone `my-project.git` to create a local copy on their development machine.
 
-### git init templates
+#### git init templates
 
 ```
 git init <directory> --template=<template_directory>
@@ -70,7 +70,7 @@ Templates allow you to initialize a new repository with a predefined `.git` subd
 
 The default templates are a good reference and example of how to utilize template features. A powerful feature of templates that's exhibited in the default templates is Git Hook configuration. You can create a template with predefined Git hooks and initialize your new git repositories with common hooks ready to go. Learn more about Git Hooks at the [Git Hook page](https://www.atlassian.com/git/tutorials/git-hooks).
 
-### Configuration
+#### Configuration
 
 All configurations of `git init <directory>` take a `<directory>` argument. If you provide the `<directory>`, the command is run inside it. If this directory does not exist, it will be created. In addition to the options and configuration already discussed, `git init` has a few other command line options. A full list of them follows:
 
@@ -109,7 +109,7 @@ You can call git init `--separate-git-dir` on an existing repository and the `.g
 
 Set access permissions for the new repository. This specifies which users and groups using Unix-level permissions are allowed to push/pull to the repository.
 
-### Examples
+#### Examples
 
 Create a new git repository for an existing code base
 

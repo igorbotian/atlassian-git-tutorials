@@ -1,4 +1,4 @@
-## .gitignore
+### .gitignore
 
 Git sees every file in your working copy as one of three things:  
 1. tracked - a file which has been previously staged or committed;  
@@ -25,7 +25,7 @@ Ignoring files in Git
 - [Stashing an ignored file](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#stashing-an-ignored-file)  
 - [Debugging .gitignore files](https://www.atlassian.com/git/tutorials/saving-changes/gitignore#debugging)  
 
-### Git ignore patterns
+#### Git ignore patterns
 
 `.gitignore` uses [globbing patterns](http://linux.die.net/man/7/glob) to match against file names. You can construct your patterns using various symbols:
 
@@ -122,15 +122,15 @@ You can use `\` to escape `.gitignore` pattern characters if you have files or d
 foo\[01\].txt
 ```
 
-### Shared .gitignore files in your repository
+#### Shared .gitignore files in your repository
 
 Git ignore rules are usually defined in a `.gitignore` file at the root of your repository. However, you can choose to define multiple `.gitignore` files in different directories in your repository. Each pattern in a particular `.gitignore` file is tested relative to the directory containing that file. However the convention, and simplest approach, is to define a single `.gitignore` file in the root. As your `.gitignore` file is checked in, it is versioned like any other file in your repository and shared with your teammates when you push. Typically you should only include patterns in `.gitignore` that will benefit other users of the repository.
 
-### Personal Git ignore rules
+#### Personal Git ignore rules
 
 You can also define personal ignore patterns for a particular repository in a special file at `.git/info/exclude`. These are not versioned, and not distributed with your repository, so it's an appropriate place to include patterns that will likely only benefit you. For example if you have a custom logging setup, or special development tools that produce files in your repository's working directory, you could consider adding them to `.git/info/exclude` to prevent them from being accidentally committed to your repository.
 
-### Global Git ignore rules
+#### Global Git ignore rules
 
 In addition, you can define global Git ignore patterns for all repositories on your local system by setting the Git `core.excludesFile` property. You'll have to create this file yourself. If you're unsure where to put your global `.gitignore` file, your home directory isn't a bad choice (and makes it easy to find later). Once you've created the file, you'll need to configure its location with `git config`:
 
@@ -141,7 +141,7 @@ $ git config --global core.excludesFile ~/.gitignore
 
 You should be careful what patterns you choose to globally ignore, as different file types are relevant for different projects. Special operating system files (e.g. `.DS_Store` and `thumbs.db`) or temporary files created by some developer tools are typical candidates for ignoring globally.
 
-### Ignoring a previously committed file
+#### Ignoring a previously committed file
 
 If you want to ignore a file that you've committed in the past, you'll need to delete the file from your repository and then add a `.gitignore` rule for it. Using the `--cached` option with git rm means that the file will be deleted from your repository, but will remain in your working directory as an ignored file.
 
@@ -156,7 +156,7 @@ $ git commit -m "Start ignoring debug.log"
 
 You can omit the `--cached` option if you want to delete the file from both the repository and your local file system.
 
-### Committing an ignored file
+#### Committing an ignored file
 
 It is possible to force an ignored file to be committed to the repository using the `-f` (or `--force`) option with `git add`:
 
@@ -185,11 +185,11 @@ $ git commit -m "Adding debug.log"
 
 This approach is more obvious, and less confusing, for your teammates.
 
-### Stashing an ignored file
+#### Stashing an ignored file
 
 `git stash` is a powerful Git feature for temporarily shelving and reverting local changes, allowing you to re-apply them later on. As you'd expect, by default `git stash` ignores ignored files and only stashes changes to files that are tracked by Git. However, you can invoke [git stash with the --all option](https://www.atlassian.com/git/tutorials/git-stash/#stashing-untracked-or-ignored) to stash changes to ignored and untracked files as well.
 
-### Debugging .gitignore files
+#### Debugging .gitignore files
 
 If you have complicated `.gitignore` patterns, or patterns spread over multiple `.gitignore` files, it can be difficult to track down why a particular file is being ignored. You can use the git check-ignore command with the `-v` (or `--verbose`) option to determine which pattern is causing a particular file to be ignored:
 

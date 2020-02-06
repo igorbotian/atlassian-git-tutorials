@@ -1,4 +1,4 @@
-## git reflog
+### git reflog
 
 This page provides a detailed discussion of the `git reflog` command. Git keeps track of updates to the tip of branches using a mechanism called reference logs, or "reflogs." Many Git commands accept a parameter for specifying a reference or "ref", which is a pointer to a commit. Common examples include:  
 - `git checkout`  
@@ -9,7 +9,7 @@ Reflogs track when Git refs were updated in the local repository. In addition to
 
 We discussed `git reflog` at a high level on the [Rewriting History](https://www.atlassian.com/git/tutorials/rewriting-history) Page. This document will cover: extended configuration options of `git reflog`, common use-cases and pitfalls of `git reflog`, how to undo changes with `git reflog`, and more.
 
-### Basic usage
+#### Basic usage
 
 The most basic Reflog use case is invoking:
 
@@ -38,7 +38,7 @@ f34388b HEAD@{6}: commit: expand on color support
 
 Visit the [Rewriting History](https://www.atlassian.com/git/tutorials/rewriting-history) page for another example of common reflog access.
 
-### Reflog references
+#### Reflog references
 
 By default, `git reflog` will output the reflog of the HEAD ref. HEAD is a symbolic reference to the currently active branch. Reflogs are available for other refs as well. The syntax to access a git ref is `name@{qualifier}`. In addition to HEAD refs, other branches, tags, remotes, and the Git stash can be referenced as well.
 
@@ -73,7 +73,7 @@ git diff stash@{0} otherbranch@{0}
 
 When executed, this example code will display `git diff` output comparing the `stash@{0}` changes against the `otherbranch@{0}` ref.
 
-### Timed reflogs
+#### Timed reflogs
 
 Every reflog entry has a timestamp attached to it. These timestamps can be leveraged as the `qualifier` token of Git ref pointer syntax. This enables filtering Git reflogs by time. The following are some examples of available time qualifiers:  
 - `1.minute.ago`  
@@ -95,11 +95,11 @@ git diff master@{0} master@{1.day.ago}
 
 This example will diff the current master branch against master 1 day ago. This example is very useful if you want to know changes that have occurred within a time frame.
 
-### Subcommands & configuration options
+#### Subcommands & configuration options
 
 `git reflog` accepts few addition arguments which are considered subcommands.
 
-#### Show - git reflog show
+##### Show - git reflog show
 
 `show` is implicitly passed by default. For example, the command:
 
@@ -115,13 +115,13 @@ git reflog show master@{0}
 
 In addition, `git reflog` show is an alias for `git log -g --abbrev-commit --pretty=oneline`. Executing `git reflog show` will display the log for the passed `<refid>`.
 
-#### Expire - git reflog expire
+##### Expire - git reflog expire
 
 The `expire` subcommand cleans up old or unreachable reflog entries. The `expire` subcommand has potential for data loss. This subcommand is not typically used by end users, but used by git internally. Passing a `-n` or `--dry-run` option to `git reflog expire` Will perform a "dry run" which will output which reflog entries are marked to be pruned, but will not actually prune them.
 
 By default, the reflog expiration date is set to 90 days. An expire time can be specified by passing a command line argument `--expire=time` to `git reflog expire` or by setting a git configuration name of `gc.reflogExpire`.
 
-#### Delete - git reflog delete
+##### Delete - git reflog delete
 
 The `delete` subcommand is self explanatory and will delete a passed in reflog entry. As with `expire`, `delete` has potential to lose data and is not commonly invoked by end users.
 
@@ -189,7 +189,7 @@ git reset HEAD@{2}
 
 Executing this `reset` command will move HEAD to the commit where "some WIP changes" was added, essentially restoring the other squashed commits.
 
-### Summary
+#### Summary
 
 In this tutorial we discussed the `git reflog` command. Some key points covered were:  
 - How to view reflog for specific branches  

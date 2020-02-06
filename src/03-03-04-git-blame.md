@@ -1,10 +1,10 @@
-## git blame
+### git blame
 
 The `git blame` command is a versatile troubleshooting utility that has extensive usage options. The high-level function of `git blame` is the display of author metadata attached to specific committed lines in a file. This is used to examine specific points of a file's history and get context as to who the last author was that modified the line. This is used to explore the history of specific code and answer questions about what, how, and why the code was added to a repository.
 
 `git blame` is often used with a GUI display. Online Git hosting sites like [Bitbucket](http://bitbucket.org/) offer *blame views* which are UI wrappers to `git blame`. These views are referenced in collaborative discussions around pull requests and commits. Additionally, most IDE's that have Git integration also have dynamic blame views.
 
-### How It Works
+#### How It Works
 
 In order to demonstrate `git blame` we need a repository with some history. We will use the open source project [git-blame-example](https://bitbucket.org/kevzettler/git-blame-example). This open source project is a simple repository that contains a `README.md` file which has a few commits from different authors. The first step of our git blame usage example is to `git clone` the example repository.
 
@@ -77,7 +77,7 @@ This is a sample of the first 13 lines of the README.md file. To better understa
 
 If we review the blame output list, we can make some observations. There are three authors listed. In addition to the project's maintainer Kev Zettler, Albert So, and Juni Mukherjee are also listed. Authors are generally the most valuable part of git blame output. The timestamp column is also primarily helpful. What the change was is indicated by line content column. |
 
-### Common Options
+#### Common Options
 
 ```
 git blame -L 1,5 README.md
@@ -109,7 +109,7 @@ git blame -C README.md
 
 The `-C` option detects lines that were moved or copied from other files. This will report the original author of the lines instead of the last author that moved or copied the lines.
 
-### Git Blame vs Git Log
+#### Git Blame vs Git Log
 
 While git blame displays the last author that modified a line, often times you will want to know when a line was originally added. This can be cumbersome to achieve using `git blame`. It requires a combination of the `-w`, `-C`, and `-M` options. It can be far more convenient to use the [git log](https://www.atlassian.com/git/tutorials/git-log) command.
 
@@ -124,6 +124,6 @@ $ git log -S"CSS3D and WebGL renderers." --pretty=format:'%h %an %ad %s'
 
 This output shows us that content from the README was added or modified 3 times by 3 different authors. It was originally added in commit `cb20237cc` by `Mr.doob`. In this example, git log has also been prepended with the `--pretty-format` option. This option converts the default output format of git log into one that matches the format of `git log`. For more information on usage and configuration options visit the [git log](https://www.atlassian.com/git/tutorials/git-log) page.
 
-### Summary
+#### Summary
 
 The `git blame` command is used to examine the contents of a file line by line and see when each line was last modified and who the author of the modifications was. The output format of `git blame` can be altered with various command line options. Online Git hosting solutions like Bitbucket offer *blame views*, which offer a superior user experience to command line `git blame` usage. `git blame` and git log can be used in combination to help discover the history of a file's contents. The `git log` command has some similar blame functionality, to learn more visit the [git log](https://www.atlassian.com/git/tutorials/git-log) overview page.
