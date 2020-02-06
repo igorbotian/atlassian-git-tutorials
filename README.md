@@ -1,6 +1,16 @@
 # Git tutorials by Atlassian
 
-Contents of [Git tutorials](https://www.atlassian.com/git/tutorials) by Atlassian in Markdown format.
+Contents of the [Git tutorials](https://www.atlassian.com/git/tutorials) by Atlassian in Markdown format.
+
+The chapters below are included in this book:  
+- *Beginner*
+- *Getting Started*
+- *Collaborating*
+- *Advanced Tips*
+
+The rest chapters are excluded:  
+- *Learn Git*
+- *Migrating to Git*
 
 ## Making an e-book
 
