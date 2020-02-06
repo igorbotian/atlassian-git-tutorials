@@ -1,0 +1,17 @@
+name: EPUB
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: awk 'FNR==1{print ""}1' src/*.md > atlassian-git-tutorials.md
+      - uses: docker://pandoc/core:latest
+        with:
+          args: "atlassian-git-tutorials.md --resource-path=.:src -f markdown -t epub -s -o atlassian-git-tutorials.epub"
+      - uses: actions/upload-artifact@v1
+        with:
+          name: atlassian-git-tutorials
+          path: atlassian-git-tutorials.epub
