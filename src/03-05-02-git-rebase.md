@@ -160,4 +160,4 @@ In this article we covered `git rebase` usage. We discussed basic and advanced u
 - git rebase --onto  
 - git rebase lost commits  
 
-We looked at `git rebase` usage with other tools like [git reflog](#git-reflog), [git fetch](https://www.atlassian.com/git/tutorials/syncing#git-fetch, and [git push]()https://www.atlassian.com/git/tutorials/syncing#git-push. Visit their corresponding pages for further information.
+We looked at `git rebase` usage with other tools like [git reflog](#git-reflog), [git fetch](#git-fetch), and [git push](#git-push). Visit their corresponding pages for further information.
