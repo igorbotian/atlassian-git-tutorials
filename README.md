@@ -12,7 +12,7 @@ The rest chapters are excluded:
 - *Learn Git*
 - *Migrating to Git*
 
-## Making an e-book
+## How to build
 
 The Markdown file can be easily converted to an e-book format.  
 An example of making an EPUB book by means of [Pandoc utility](https://pandoc.org/) (v2.0 or above) is below:
@@ -20,3 +20,7 @@ An example of making an EPUB book by means of [Pandoc utility](https://pandoc.or
 ```bash
 pandoc src/*.md --resouce-path=.:src -f markdown -t epub -s -o atlassian-git-tutorials.epub
 ```
+
+## Download
+
+The `.epub` and `.mobi` files can be found [here](https://github.com/igorbotian/atlassian-git-tutorials/releases/latest).
